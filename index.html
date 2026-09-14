@@ -1,130 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tom Sax | Saxophoniste événementiel & live performer</title>
-  <meta name="description" content="Tom Sax accompagne mariages, cocktails, soirées privées et événements professionnels avec une performance sax live personnalisée.">
-  <meta property="og:title" content="Tom Sax | Saxophoniste événementiel">
-  <meta property="og:description" content="Mariages, cocktails, soirées et événements — découvrez le live, le répertoire et vérifiez votre date.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tom Sax — Saxophoniste live pour mariages & événements</title>
+  <meta name="description" content="Saxophone live pour mariages, cocktails, soirées privées et événements professionnels. Découvrez Tom Sax, son univers, son répertoire et vérifiez votre date.">
+  <meta name="theme-color" content="#181816">
+  <meta property="og:title" content="Tom Sax — Saxophoniste live">
+  <meta property="og:description" content="Mariages, cocktails, soirées et événements. Une présence live pensée pour chaque moment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&family=La+Belle+Aurore&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"PerformingGroup","name":"Tom Sax","url":"https://www.instagram.com/tomsaxoff/","sameAs":["https://www.instagram.com/tomsaxoff/"]}</script>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Tom Sax, accueil">
-      <span class="brand-name">TOM SAX</span>
-      <span class="brand-sub">Saxophoniste live</span>
+  <header class="header" id="top">
+    <a class="logo" href="#top" aria-label="Tom Sax — accueil">
+      <span>TOM SAX</span>
+      <small>SAXOPHONISTE LIVE</small>
     </a>
-    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
-    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
-      <a href="#prestations">Prestations</a><a href="#live">Live</a><a href="#repertoire">Répertoire</a><a href="#avis">Avis</a><a href="#contact">Contact</a>
+    <button class="menu-button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#experience">Expérience</a>
+      <a href="#prestations">Prestations</a>
+      <a href="#live">Live</a>
+      <a href="#repertoire">Répertoire</a>
+      <a href="#contact">Contact</a>
       <a class="nav-admin" href="admin/login.html">Espace Tom</a>
     </nav>
-    <a class="header-cta" href="#contact">Vérifier ma date</a>
+    <a class="book-link" href="#contact">Vérifier ma date</a>
   </header>
 
   <main>
-    <section class="hero section-dark" aria-labelledby="hero-title">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Mariages · Cocktails · Soirées · Événements</p>
-        <h1 id="hero-title">Le sax live,<br><em>au bon moment.</em></h1>
-        <p class="hero-lead">Une présence musicale élégante pour accompagner les temps forts d’un événement — de l’émotion de la cérémonie à l’énergie du dancefloor.</p>
-        <div class="hero-actions"><a class="btn btn-gold" href="#contact">Vérifier ma date</a><a class="btn btn-ghost" href="#live">Voir Tom en live</a></div>
-        <div class="hero-tags"><span>Cérémonie</span><span>Cocktail</span><span>DJ + Sax</span><span>Corporate</span></div>
-      </div>
-      <div class="hero-stage reveal">
-        <div class="stage-frame">
-          <div class="stage-topline"><span>LIVE PERFORMANCE</span><span>01</span></div>
-          <div class="stage-center"><div class="sax-mark" aria-hidden="true">S</div><p>Un univers pensé pour être vu, écouté et réservé en quelques minutes.</p></div>
-          <div class="soundwave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <a href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer">@tomsaxoff ↗</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/images/tom-hero.webp" alt="Tom Sax jouant du saxophone lors d'un événement">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="micro">MARIAGES · COCKTAILS · SOIRÉES · ÉVÉNEMENTS</p>
+        <h1 id="hero-title">Le saxophone<br>qui accompagne<br><span>vos moments.</span></h1>
+        <p class="hero-text">De l’arrivée des invités au dancefloor, une prestation live pensée pour suivre l’énergie de votre événement.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#contact">Vérifier ma date</a>
+          <a class="button button-line" href="#live">Voir les performances</a>
         </div>
       </div>
-      <a class="scroll-cue" href="#intro">Découvrir <span>↓</span></a>
+      <div class="hero-side">TOM SAX · LIVE PERFORMANCE</div>
     </section>
 
-    <section class="intro section-light" id="intro">
-      <div class="intro-kicker reveal">TOM SAX / LIVE EVENT</div>
-      <div class="intro-copy reveal"><h2>Une ambiance qui s’adapte au déroulé de votre événement.</h2><p>Tom peut intervenir sur plusieurs temps : arrivée des invités, cérémonie, cocktail, repas, ouverture de bal ou soirée avec DJ. Le répertoire est choisi selon l’atmosphère recherchée et le public.</p></div>
+    <section class="trust-strip">
+      <div><strong>Mariages</strong><span>Cérémonie · Cocktail · Soirée</span></div>
+      <div><strong>DJ + Sax</strong><span>Interventions live sur le dancefloor</span></div>
+      <div><strong>Événements privés</strong><span>Anniversaires · Réceptions</span></div>
+      <div><strong>Corporate</strong><span>Entreprises · Restaurants · Galas</span></div>
     </section>
 
-    <section class="services section-light" id="prestations" aria-labelledby="services-title">
-      <div class="section-heading reveal"><p class="eyebrow dark">Prestations</p><h2 id="services-title">Chaque moment a son énergie.</h2></div>
-      <div class="service-list" id="service-list"></div>
-    </section>
-
-    <section class="live-section section-dark" id="live" aria-labelledby="live-title">
-      <div class="section-heading reveal"><p class="eyebrow">Live</p><h2 id="live-title">Voir. Écouter. Ressentir.</h2></div>
-      <div class="live-grid" id="live-grid"></div>
-      <div class="section-cta reveal"><a class="btn btn-ghost" href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer">Voir plus sur Instagram</a></div>
-    </section>
-
-    <section class="repertoire section-light" id="repertoire" aria-labelledby="repertoire-title">
-      <div class="section-heading reveal"><p class="eyebrow dark">Répertoire</p><h2 id="repertoire-title">Quelle ambiance voulez-vous ?</h2><p class="section-intro">Des morceaux romantiques aux classiques dance, en passant par le funk, le latino, la pop et les incontournables sax.</p></div>
-      <div class="music-toolbar reveal">
-        <label class="search-field" for="music-search"><span class="sr-only">Rechercher un morceau ou un artiste</span><input id="music-search" type="search" placeholder="Rechercher un morceau ou un artiste"></label>
-        <div class="music-filters" id="music-filters" role="group" aria-label="Filtrer le répertoire"></div>
+    <section class="manifesto" id="experience">
+      <p class="section-label">L’EXPÉRIENCE</p>
+      <div class="manifesto-copy">
+        <h2>Une prestation ne se résume pas à “jouer quelques morceaux”.</h2>
+        <p>Le bon titre, au bon moment, avec la bonne intensité. Tom adapte son intervention au déroulé de votre événement : élégante en accueil ou cocktail, émotionnelle pendant une cérémonie, puis plus énergique lorsqu’il rejoint le DJ et les invités.</p>
       </div>
-      <div class="music-list" id="music-list" aria-live="polite"></div>
-      <div class="request-song reveal"><div><p class="eyebrow dark">Votre titre n’est pas dans la liste ?</p><h3>Proposez votre morceau.</h3></div><a class="text-link" href="#contact">Faire une demande →</a></div>
+      <p class="script-note">Créer l’ambiance, puis la faire monter.</p>
     </section>
 
-    <section class="process section-dark" aria-labelledby="process-title">
-      <div class="section-heading reveal"><p class="eyebrow">Votre événement</p><h2 id="process-title">Simple à organiser.</h2></div>
-      <ol class="process-list reveal">
-        <li><span>01</span><div><h3>Vous envoyez votre demande</h3><p>Date, lieu, type d’événement et ambiance souhaitée.</p></div></li>
-        <li><span>02</span><div><h3>Tom confirme sa disponibilité</h3><p>Le besoin est clarifié et la prestation adaptée à votre déroulé.</p></div></li>
-        <li><span>03</span><div><h3>Vous choisissez vos moments</h3><p>Cérémonie, cocktail, soirée, DJ + Sax ou plusieurs passages.</p></div></li>
-        <li><span>04</span><div><h3>Le live prend le relais</h3><p>Une prestation pensée pour votre public et votre ambiance.</p></div></li>
-      </ol>
+    <section class="editorial-story" id="prestations">
+      <article class="story story-dark">
+        <div class="story-image story-image-tall">
+          <img src="assets/images/tom-sunset.webp" alt="Tom Sax jouant au coucher du soleil">
+        </div>
+        <div class="story-copy">
+          <p class="index">01 / CÉRÉMONIE & ÉMOTION</p>
+          <h3>Accompagner les instants que tout le monde retient.</h3>
+          <p>Entrée, sortie, moment symbolique, première danse ou morceau choisi spécialement pour vous.</p>
+          <a href="#contact">Parler de votre cérémonie →</a>
+        </div>
+      </article>
+
+      <article class="story story-paper reverse">
+        <div class="story-image">
+          <img src="assets/images/tom-cocktail.webp" alt="Tom Sax lors d'un cocktail en extérieur">
+        </div>
+        <div class="story-copy">
+          <p class="index">02 / COCKTAIL & VIN D’HONNEUR</p>
+          <h3>Une présence élégante, sans prendre toute la place.</h3>
+          <p>Un fond musical vivant et identifiable, entre soul, pop, jazz, variété, latino et titres incontournables.</p>
+          <a href="#repertoire">Explorer le répertoire →</a>
+        </div>
+      </article>
+
+      <article class="story story-dark">
+        <div class="story-image">
+          <img src="assets/images/tom-dj.webp" alt="Tom Sax jouant face au dancefloor avec un DJ">
+        </div>
+        <div class="story-copy">
+          <p class="index">03 / DJ + SAX LIVE</p>
+          <h3>Quand le sax rejoint la soirée, l’énergie change.</h3>
+          <p>Interventions au milieu des invités, coordination avec le DJ et titres choisis pour garder le dancefloor en mouvement.</p>
+          <a href="#live">Voir l’ambiance →</a>
+        </div>
+      </article>
     </section>
 
-    <section class="testimonials section-light" id="avis" aria-labelledby="reviews-title">
-      <div class="section-heading reveal"><p class="eyebrow dark">Avis</p><h2 id="reviews-title">Ils racontent l’ambiance.</h2></div>
-      <div class="reviews-grid" id="reviews-grid"></div>
-      <p class="demo-note">Les témoignages affichés dans ce MVP sont des exemples de démonstration et seront remplacés par les avis réels de Tom.</p>
-    </section>
-
-    <section class="contact section-dark" id="contact" aria-labelledby="contact-title">
-      <div class="contact-copy reveal">
-        <p class="eyebrow">Disponibilité</p><h2 id="contact-title">Parlons de votre événement.</h2>
-        <p>Quelques informations suffisent pour qualifier la demande. Dans ce MVP, l’envoi est enregistré localement et apparaît immédiatement dans l’espace de gestion de démonstration.</p>
-        <a class="text-link light" href="admin/login.html">Voir l’espace Tom →</a>
+    <section class="moments">
+      <div class="moments-heading">
+        <p class="section-label">MOMENTS</p>
+        <h2>Pas une galerie.<br>Une idée de l’ambiance.</h2>
       </div>
-      <form class="event-form reveal" id="event-form" novalidate>
-        <div class="form-grid">
-          <label>Prénom<input name="firstName" required autocomplete="given-name"></label>
-          <label>Nom<input name="lastName" required autocomplete="family-name"></label>
-          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <div class="moments-grid">
+        <figure class="moment moment-large">
+          <img src="assets/images/tom-portrait.webp" alt="Tom Sax en performance">
+          <figcaption>Performance live</figcaption>
+        </figure>
+        <figure class="moment">
+          <img src="assets/images/tom-detail.webp" alt="Détail du saxophone de Tom">
+          <figcaption>Le son, de près</figcaption>
+        </figure>
+        <figure class="moment">
+          <img src="assets/images/tom-party.webp" alt="Invités dansant lors d'un mariage">
+          <figcaption>Quand la soirée démarre</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="live-section" id="live">
+      <div class="live-intro">
+        <p class="section-label light">LIVE</p>
+        <h2>Voir Tom<br>en situation.</h2>
+        <p>Le site doit montrer ce qui compte vraiment : la présence, l’interaction et la réaction du public.</p>
+        <a class="button button-line" href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer">Instagram @tomsaxoff</a>
+      </div>
+      <div class="reels" id="live-grid"></div>
+    </section>
+
+    <section class="repertoire" id="repertoire">
+      <div class="repertoire-head">
+        <p class="section-label">RÉPERTOIRE</p>
+        <h2>Du premier verre<br>au dernier morceau.</h2>
+        <p>Filtrez par ambiance ou recherchez directement un titre. Une demande particulière peut aussi être étudiée pour votre événement.</p>
+      </div>
+      <div class="music-ui">
+        <div class="music-search">
+          <label for="music-search">Rechercher</label>
+          <input id="music-search" type="search" placeholder="Titre ou artiste">
+        </div>
+        <div class="music-filters" id="music-filters"></div>
+        <div class="music-list" id="music-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about-image">
+        <img src="assets/images/tom-about.webp" alt="Portrait de Tom Sax avec son saxophone">
+      </div>
+      <div class="about-copy">
+        <p class="section-label light">TOM SAX</p>
+        <h2>Une présence live qui s’intègre à votre événement.</h2>
+        <p>Tom intervient sur des mariages, cocktails, soirées privées et événements professionnels. Le format est construit selon le lieu, les moments à accompagner et l’ambiance recherchée.</p>
+        <p>Le site final pourra également centraliser ses demandes, ses dates, ses clients, son répertoire et ses prestations depuis son espace professionnel.</p>
+        <a href="admin/login.html">Découvrir l’espace professionnel →</a>
+      </div>
+    </section>
+
+    <section class="booking" id="contact">
+      <div class="booking-title">
+        <p class="section-label">VOTRE DATE</p>
+        <h2>Parlez-nous de votre événement.</h2>
+        <p>Pas besoin d’écrire un roman. La date, le lieu et les moments souhaités suffisent pour démarrer.</p>
+      </div>
+      <form id="event-form" class="booking-form" novalidate>
+        <div class="field-row">
+          <label>Prénom<input name="firstName" autocomplete="given-name" required></label>
+          <label>Nom<input name="lastName" autocomplete="family-name" required></label>
+        </div>
+        <div class="field-row">
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
           <label>Téléphone<input name="phone" type="tel" autocomplete="tel"></label>
-          <label>Type d’événement<select name="eventType" required><option value="">Choisir</option><option>Mariage</option><option>Anniversaire</option><option>Corporate</option><option>Restaurant / établissement</option><option>Soirée privée</option><option>Autre</option></select></label>
-          <label>Date<input name="eventDate" type="date" required></label>
-          <label class="full">Ville / lieu<input name="location" required placeholder="Ex. Metz, Luxembourg, Nancy…"></label>
-          <label>Nombre d’invités<input name="guestCount" type="number" min="1" placeholder="Ex. 120"></label>
-          <label>Moment souhaité<select name="moment" required><option value="">Choisir</option><option>Cérémonie</option><option>Cocktail</option><option>Repas</option><option>Ouverture de bal</option><option>Soirée / DJ + Sax</option><option>Plusieurs moments</option></select></label>
-          <label class="full">Message<textarea name="message" rows="5" placeholder="Ambiance, morceau important, organisation particulière…"></textarea></label>
         </div>
+        <div class="field-row">
+          <label>Événement
+            <select name="eventType" required>
+              <option value="">Choisir</option>
+              <option>Mariage</option>
+              <option>Anniversaire</option>
+              <option>Corporate</option>
+              <option>Restaurant / établissement</option>
+              <option>Soirée privée</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label>Date<input name="eventDate" type="date" required></label>
+        </div>
+        <div class="field-row">
+          <label>Lieu<input name="location" placeholder="Ville / lieu" required></label>
+          <label>Moment
+            <select name="moment" required>
+              <option value="">Choisir</option>
+              <option>Cérémonie</option>
+              <option>Cocktail</option>
+              <option>Repas</option>
+              <option>Ouverture de bal</option>
+              <option>Soirée / DJ + Sax</option>
+              <option>Plusieurs moments</option>
+            </select>
+          </label>
+        </div>
+        <label>Votre idée<textarea name="message" rows="4" placeholder="Ambiance, morceau important, déroulé particulier…"></textarea></label>
         <label class="consent"><input type="checkbox" name="consent" required><span>J’accepte que ces informations soient utilisées pour traiter ma demande.</span></label>
-        <button class="btn btn-gold" type="submit">Vérifier la disponibilité</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <button class="button button-dark" type="submit">Envoyer ma demande</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div><span class="brand-name">TOM SAX</span><p>Saxophoniste événementiel & live performer</p></div>
-    <div class="footer-links"><a href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer">Instagram</a><a href="legal/mentions-legales.html">Mentions légales</a><a href="legal/confidentialite.html">Confidentialité</a></div>
+  <footer class="footer">
+    <div class="footer-brand"><span>TOM SAX</span><small>SAXOPHONISTE LIVE</small></div>
+    <div class="footer-links"><a href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer">Instagram</a><a href="#contact">Contact</a><a href="admin/login.html">Espace Tom</a></div>
+    <div class="footer-legal"><a href="legal/mentions-legales.html">Mentions légales</a><a href="legal/confidentialite.html">Confidentialité</a></div>
   </footer>
 
-  <script src="js/data.js"></script><script src="js/animations.js"></script><script src="js/music.js"></script><script src="js/form.js"></script><script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
