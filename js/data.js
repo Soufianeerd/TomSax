@@ -1,18 +1,10 @@
 const TOM_SAX_DATA = {
   profile:{name:'Tom Sax',tagline:'Saxophoniste événementiel & live performer',instagram:'https://www.instagram.com/tomsaxoff/',handle:'@tomsaxoff'},
-  services:[
-    {id:'ceremonie',title:'Cérémonie & émotion',text:'Entrée, cérémonie, sortie, première danse et moments symboliques, avec une sélection musicale adaptée au rythme du moment.',meta:'Mariage · Émotion · Sur mesure'},
-    {id:'cocktail',title:'Cocktail & vin d’honneur',text:'Une présence chic et mobile pour accompagner les échanges : pop, soul, lounge, jazz, chanson française et titres reconnaissables.',meta:'Cocktail · Lounge · Pop'},
-    {id:'dj-sax',title:'DJ + Sax live',text:'Des interventions live au cœur de la soirée, en coordination avec le DJ, pour créer des pics d’énergie sans casser le flow du dancefloor.',meta:'Soirée · Club · Dance'},
-    {id:'events',title:'Événements privés & professionnels',text:'Anniversaire, entreprise, restaurant, gala ou soirée privée : un format modulable selon le lieu, la durée et l’ambiance.',meta:'Corporate · Privé · Hospitality'}
-  ],
   media:[
-    {id:'m1',type:'Instagram',title:'Entrée & émotion',occasion:'Mariage',url:'https://www.instagram.com/tomsaxoff/'},
-    {id:'m2',type:'Instagram',title:'Cocktail live',occasion:'Cocktail',url:'https://www.instagram.com/tomsaxoff/'},
-    {id:'m3',type:'Instagram',title:'DJ + Sax',occasion:'Soirée',url:'https://www.instagram.com/tomsaxoff/'},
-    {id:'m4',type:'Instagram',title:'Ambiance festive',occasion:'Événement',url:'https://www.instagram.com/tomsaxoff/'},
-    {id:'m5',type:'Instagram',title:'Set lounge',occasion:'Réception',url:'https://www.instagram.com/tomsaxoff/'},
-    {id:'m6',type:'Instagram',title:'Performance live',occasion:'Private event',url:'https://www.instagram.com/tomsaxoff/'}
+    {id:'m1',type:'Live',title:'Mariage — soirée',occasion:'Dancefloor',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-dj.webp'},
+    {id:'m2',type:'Live',title:'Cocktail en extérieur',occasion:'Réception',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-cocktail.webp'},
+    {id:'m3',type:'Live',title:'Performance au coucher du soleil',occasion:'Wedding',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-sunset.webp'},
+    {id:'m4',type:'Live',title:'Soirée & invités',occasion:'Mariage',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-party.webp'}
   ],
   repertoire:[
     ['Saxo Beat','—','Sax moderne'],['No Man No Cry','Jimmy Sax','Sax moderne'],['Una Mattina','Jimmy Sax','Sax moderne'],['Ibiza','Jul x Jimmy Sax','Sax moderne'],['Lily Was Here','Candy Dulfer','Jazz / Lounge'],['One Day / Vandaag','Bakermat','Sax moderne'],['Jubel','Klingande','Sax moderne'],['Punga','Klingande','Sax moderne'],['Only God Can Save Your Soul','Klingande','Sax moderne'],['Changes','Faul & Wad','Sax moderne'],['This Girl','Kungs','Sax moderne'],['Calabria 2007','—','Dance / Club'],['How Gee','—','Sax moderne'],
@@ -24,11 +16,6 @@ const TOM_SAX_DATA = {
     ['Salé','Niska','Urbain / Afro'],['Kalash','Niska','Urbain / Afro'],['Spider','Gims','Urbain / Afro'],['Parisienne','Gims','Urbain / Afro'],['Ninao','Gims','Urbain / Afro'],['Catchu','L’Artiste','Urbain / Afro'],['Chocolat','L’Artiste','Urbain / Afro'],['Joli Bébé','Naza','Urbain / Afro'],['Avec Classe','Corneille & Aya Nakamura','Urbain / Afro'],['Morose','Damso','Urbain / Afro'],['Mwaka Moon','Damso & Kalash','Urbain / Afro'],['N’y pense plus','Tayc','Urbain / Afro'],['Dodo','Tayc','Urbain / Afro'],['Laisse-moi','Keblack','Urbain / Afro'],['Match Nul','Éloquence','Urbain / Afro'],['Ne reviens pas','Heuss L’enfoiré','Urbain / Afro'],['Femme Like U','K-Maro','Urbain / Afro'],['Tu m’oublieras','Larusso','Urbain / Afro'],['Un jour je marierai un ange','Pierre de Maere','Urbain / Afro'],
     ['Bella Ciao','—','Jazz / Lounge'],['Take Five','Dave Brubeck','Jazz / Lounge']
   ].map((s,i)=>({id:'song-'+(i+1),title:s[0],artist:s[1],category:s[2],visible:true,featured:['Careless Whisper','Lily Was Here','Jubel','Calabria 2007','Take Five','La Vie en Rose'].includes(s[0])})),
-  reviews:[
-    {name:'Camille & Mehdi',event:'Mariage',city:'Metz',text:'Une présence élégante au cocktail puis beaucoup d’énergie pendant la soirée.',rating:5,demo:true},
-    {name:'Julie',event:'Anniversaire',city:'Nancy',text:'Le sax a vraiment donné une autre dimension à l’ambiance sans prendre toute la place.',rating:5,demo:true},
-    {name:'Entreprise Nova',event:'Corporate',city:'Luxembourg',text:'Une prestation fluide, adaptée au lieu et au public. Très bon rendu pendant le cocktail.',rating:5,demo:true}
-  ],
   demo:{
     leads:[
       {id:'lead-1001',firstName:'Sarah',lastName:'Yanis',email:'sarah@example.com',phone:'06 00 00 00 01',eventType:'Mariage',eventDate:'2027-05-23',location:'Metz',guestCount:'150',moment:'Cocktail + soirée',message:'Nous cherchons une ambiance chic au cocktail puis plus festive avec notre DJ.',status:'Nouveau',createdAt:'2026-09-14T12:00:00.000Z',demo:true},
