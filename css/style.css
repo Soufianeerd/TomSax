@@ -98,9 +98,8 @@ button,input,select,textarea{font:inherit}
   padding:0 22px;border-right:1px solid rgba(255,255,255,.2)
 }
 .benefit:last-child{border-right:0}
-.benefit-icon{
-  color:#e7c690;font-family:var(--serif);font-size:37px;line-height:1;text-align:center
-}
+.benefit-icon{color:#e7c690;text-align:center;display:grid;place-items:center}
+.benefit-icon svg{width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
 .benefit strong{display:block;font-size:10px;margin-bottom:5px}
 .benefit span{display:block;font-size:8px;color:rgba(255,255,255,.75);line-height:1.45}
 
