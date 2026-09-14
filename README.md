@@ -1,18 +1,32 @@
-# TomSax
+# TomSax — MVP Business / Signature
 
-Site web professionnel et espace de gestion pour **Tom Sax**, saxophoniste événementiel & live performer (mariages, cocktails raffinés, soirées privées et clubbing).
+MVP commercial en HTML/CSS/JS vanilla pour Tom Sax, saxophoniste événementiel.
 
-## Stack Technique
-- **HTML5** sémantique
-- **CSS3** Vanilla (sans framework)
-- **JavaScript ES6+** Vanilla (sans framework)
-- Déploiement statique ultra-rapide
+## Positionnement du MVP
+Le site volontairement présenté au client se situe entre l'offre Business (350 €) et l'offre Signature (430 €). L'offre à 270 € n'est pas affichée dans le MVP.
 
-## Architecture du Projet
-- `/` : Page principale (`index.html`)
-- `/assets` : Images, vidéos et icônes SVG
-- `/css` : Styles modulaires (`reset.css`, `variables.css`, `style.css`, `responsive.css`, `admin.css`)
-- `/js` : Scripts modulaires avec données centralisées (`data.js`, `app.js`, `music.js`, `form.js`, `animations.js`, `admin.js`)
-- `/admin` : Espace d'administration démonstration (`login.html`, `index.html`)
-- `/legal` : Mentions légales et politique de confidentialité
-- `GEMINI.md` : Directives et règles strictes de développement
+## Ce que montre le MVP
+- site public premium et responsive ;
+- prestations et parcours de réservation ;
+- galerie live reliée au profil Instagram ;
+- répertoire musical filtrable ;
+- formulaire de demande ;
+- espace Tom de démonstration ;
+- mini CRM des demandes ;
+- calendrier / événements ;
+- fiches clients ;
+- répertoire administrable ;
+- suivi acomptes / reste à encaisser ;
+- devis simplifié imprimable.
+
+## Démo admin
+Ouvrir `/admin/login.html` puis cliquer sur **Accéder à mon espace**.
+
+## Persistance
+Le MVP utilise `localStorage` pour simuler le futur backend. Les données sont structurées afin de pouvoir être migrées ensuite vers Neon/PostgreSQL.
+
+## Lancement local
+```bash
+python3 -m http.server 8080
+```
+Puis ouvrir `http://localhost:8080`.
