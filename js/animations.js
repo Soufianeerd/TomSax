@@ -1,17 +1,5 @@
-/**
- * MICRO-INTERACTIONS & ANIMATIONS — TOM SAX
- * Animations courtes et élégantes dans le respect strict de prefers-reduced-motion.
- */
-
-const AnimationsModule = {
-  init() {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
-
-    // IntersectionObserver et transitions subtiles
-  }
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  AnimationsModule.init();
-});
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));return;}
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
