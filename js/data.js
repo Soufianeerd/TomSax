@@ -1,10 +1,10 @@
 const TOM_SAX_DATA = {
   profile:{name:'Tom Sax',tagline:'Saxophoniste événementiel & live performer',instagram:'https://www.instagram.com/tomsaxoff/',handle:'@tomsaxoff'},
   media:[
-    {id:'m1',type:'Live',title:'Mariage — soirée',occasion:'Dancefloor',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-dj.webp'},
-    {id:'m2',type:'Live',title:'Cocktail en extérieur',occasion:'Réception',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-cocktail.webp'},
-    {id:'m3',type:'Live',title:'Performance au coucher du soleil',occasion:'Wedding',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-sunset.webp'},
-    {id:'m4',type:'Live',title:'Soirée & invités',occasion:'Mariage',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/tom-party.webp'}
+    {id:'m1',type:'Live',title:'Mariage — soirée',occasion:'Dancefloor',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/webp/07-dj-dancefloor.webp'},
+    {id:'m2',type:'Live',title:'Cocktail en extérieur',occasion:'Réception',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/webp/05-garden-cocktail.webp'},
+    {id:'m3',type:'Live',title:'Performance au coucher du soleil',occasion:'Wedding',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/webp/01-sunset-back.webp'},
+    {id:'m4',type:'Live',title:'Soirée & invités',occasion:'Mariage',url:'https://www.instagram.com/tomsaxoff/',thumbnail:'assets/images/webp/09-wedding-dance.webp'}
   ],
   repertoire:[
     ['Saxo Beat','—','Sax moderne'],['No Man No Cry','Jimmy Sax','Sax moderne'],['Una Mattina','Jimmy Sax','Sax moderne'],['Ibiza','Jul x Jimmy Sax','Sax moderne'],['Lily Was Here','Candy Dulfer','Jazz / Lounge'],['One Day / Vandaag','Bakermat','Sax moderne'],['Jubel','Klingande','Sax moderne'],['Punga','Klingande','Sax moderne'],['Only God Can Save Your Soul','Klingande','Sax moderne'],['Changes','Faul & Wad','Sax moderne'],['This Girl','Kungs','Sax moderne'],['Calabria 2007','—','Dance / Club'],['How Gee','—','Sax moderne'],

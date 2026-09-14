@@ -185,7 +185,90 @@ button,input,select,textarea{font:inherit}
 .music-title{font-family:var(--serif);font-size:17px}
 .music-title span{color:var(--gold)}
 .music-artist,.music-category{font-size:8px;color:#aaa}
-.music-category{text-transform:uppercase;letter-spacing:.09em;text-align:right}
+.testimonials{
+  background:#0c0d0d;
+  color:#fff;
+  padding:54px 5.2vw 64px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.demo-notice{
+  font-size:10px;
+  color:rgba(255,255,255,.6);
+  margin-top:6px;
+}
+.rating-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:9px 14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(195,154,88,.45);
+  font-size:9px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#fff;
+  white-space:nowrap;
+}
+.stars-gold{
+  color:var(--gold);
+  letter-spacing:2px;
+  font-size:11px;
+}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:24px;
+}
+.testimonial-card{
+  background:#131414;
+  border:1px solid rgba(255,255,255,.1);
+  padding:26px 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:16px;
+  transition:border-color .3s ease, transform .3s ease;
+}
+.testimonial-card:hover{
+  border-color:rgba(195,154,88,.55);
+  transform:translateY(-2px);
+}
+.testimonial-card blockquote{
+  font-family:var(--serif);
+  font-size:15px;
+  line-height:1.55;
+  color:rgba(255,255,255,.92);
+  font-style:italic;
+  margin:0;
+}
+.testimonial-author{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:12px;
+}
+.testimonial-author strong{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.06em;
+  color:#fff;
+}
+.testimonial-author span{
+  font-size:8px;
+  color:rgba(255,255,255,.55);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.req{
+  color:var(--gold);
+  font-weight:bold;
+}
+.back-to-top{
+  color:var(--gold);
+  text-decoration:none;
+}
 
 .contact{display:grid;grid-template-columns:.82fr 1.18fr;background:#f3eee6;min-height:650px}
 .contact-visual{position:relative;min-height:650px;overflow:hidden;background:#111}

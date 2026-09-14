@@ -18,8 +18,8 @@
   .benefit:nth-child(2){border-right:0}
   .about{grid-template-columns:32% 43% 25%}
   .about-copy{padding:0 24px}
-  .about-quote figure{height:210px}
   .service-copy p{font-size:8px}
+  .testimonials-grid{grid-template-columns:1fr;gap:18px}
 }
 @media(max-width:820px){
   .site-header{
@@ -65,6 +65,7 @@
   .live-strip{grid-template-columns:repeat(3,1fr);height:auto;gap:6px}
   .live-strip figure{height:260px}
   .repertoire{grid-template-columns:1fr;padding:58px 22px;gap:34px}
+  .testimonials{padding:48px 22px 56px}
   .contact{grid-template-columns:1fr}
   .contact-visual{min-height:520px}
   .contact-panel{padding:52px 22px}
@@ -102,6 +103,9 @@
   .filter-btn{white-space:nowrap}
   .music-row{grid-template-columns:1fr}
   .music-category{text-align:left}
+  .testimonials{padding:40px 16px 48px}
+  .testimonial-card{padding:22px 18px}
+  .testimonial-card blockquote{font-size:14px}
   .contact-visual{min-height:470px}
   .contact-title{left:20px;bottom:25px}
   .contact-title h2{font-size:48px}
