@@ -1,56 +1,70 @@
 # DIRECTIVES DE DÉVELOPPEMENT — PROJET TOM SAX
 
-Ce document définit les règles architecturales, techniques et ergonomiques strictes pour le développement du site de Tom Sax.
+## Stack obligatoire
+- HTML5 sémantique.
+- CSS3 vanilla uniquement.
+- JavaScript ES6+ vanilla uniquement.
+- Aucun React, Next.js, Vue, Angular, Tailwind ou Bootstrap.
+- Aucun build complexe : le projet doit fonctionner sur un serveur statique HTTP.
 
----
+## Direction produit
+Le MVP présenté à Tom doit volontairement se situer entre l'offre Business à 350 € et l'offre Signature à 430 €.
 
-## 1. Stack Technique Obligatoire
-- **HTML5 Sémantique**
-- **CSS3 Vanilla** (zéro Tailwind, zéro Bootstrap, zéro framework CSS)
-- **JavaScript ES6+ Vanilla** (zéro React, zéro Next.js, zéro Vue, zéro Angular, aucun framework JS)
-- **Zéro build complexe** : le projet s'exécute directement sur n'importe quel serveur statique HTTP.
-- **Interdiction formelle** de remplacer HTML/CSS/JS vanilla par un framework sous quelque prétexte que ce soit.
+L'offre à 270 € ne doit pas être affichée dans le MVP public. Le site doit être perçu comme le futur site réel de Tom, pas comme un comparateur de tarifs.
 
----
+Le MVP doit faire comprendre deux choses :
+1. le site transforme Instagram / TikTok en demandes qualifiées ;
+2. l'espace Tom permet d'organiser l'activité : demandes, calendrier, événements, clients, répertoire, acomptes et devis.
 
-## 2. Règles de Conception et Design
-- **Mobile-first** : l'expérience sur smartphone (venant d'Instagram/TikTok) est la priorité absolue.
-- **Design premium événementiel** : univers soigné, élégant, immersif et crédible pour mariages, soirées privées, cocktails et clubs.
-- **Aucun lorem ipsum** : tous les textes doivent être contextualisés, réels et percutants.
-- **Aucun texte générique creux** du type « Transformez vos rêves en réalité ».
-- **Pas d’apparence de template IA** : typographies choisies avec soin, hiérarchie visuelle travaillée, rythme éditorial naturel.
-- **Pas de gradients excessifs**.
-- **Pas de glassmorphism partout** (usage très mesuré et subtil si nécessaire).
-- **Pas de dizaines de cards identiques** : varier les formats et la mise en page.
-- **Pas d’emojis utilisés comme icônes principales** : utiliser des icônes SVG propres et vectorielles.
+## Design
+- Mobile-first.
+- Univers premium événementiel, mariage moderne, nightlife chic.
+- Aucun lorem ipsum.
+- Aucun texte marketing générique creux.
+- Pas d'apparence de template IA.
+- Pas de gradients excessifs.
+- Pas de glassmorphism généralisé.
+- Éviter les grilles de cards SaaS répétitives.
+- Typographie éditoriale, beaucoup d'espace, contrastes soignés.
+- Pas d'emojis comme icônes principales.
+- Animations discrètes et respect de prefers-reduced-motion.
 
----
+## Qualité
+- HTML sémantique.
+- Navigation clavier.
+- Focus visibles.
+- Formulaires correctement labelisés.
+- Contrastes raisonnables.
+- SEO de base et Schema.org lorsque les données sont réelles.
+- Aucune statistique, coordonnée ou promesse commerciale inventée.
 
-## 3. Qualité, Accessibilité & Performance
-- **Accessibilité WCAG raisonnable** : contrastes de couleurs suffisants, balises `aria`, structure de titres logique (`h1` unique, `h2`, `h3`).
-- **HTML sémantique** : balises `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
-- **SEO de base** : balises `meta` (description, OpenGraph, Twitter Card), balisage Schema.org / JSON-LD pour musicien/artiste événementiel.
-- **Très bonnes performances** : assets optimisés, CSS léger et structuré, pas de dépendances lourdes tierces.
-- **Animations élégantes et courtes** : micro-interactions fluides, discrètes, non intrusives.
-- **Respect de `prefers-reduced-motion`** : désactivation ou adoucissement des transitions pour les utilisateurs sensibles.
-- **Navigation clavier** : focus visibles, tabulations ordonnées, modals/tiroirs piégeant le focus correctement.
-- **Formulaires correctement labelisés** : balises `<label for="...">`, messages d'erreurs clairs, validations natives et JS.
+## Données
+- Les données publiques de démonstration sont centralisées dans js/data.js.
+- Les données du CRM MVP sont stockées dans localStorage.
+- Les données de démonstration doivent être identifiables comme telles.
+- Le formulaire public alimente immédiatement les demandes de l'espace Tom.
+- L'architecture doit rester facilement migrable vers Neon/PostgreSQL.
 
----
+## Fonctions MVP attendues
+### Public
+- Hero.
+- Prestations.
+- Galerie live.
+- Répertoire filtrable et recherchable.
+- Parcours de réservation.
+- Avis de démonstration clairement indiqués.
+- Formulaire qualifié.
 
-## 4. Données et Maintenabilité
-- **Toutes les données modifiables doivent être centralisées dans `js/data.js`** : prestations, tarifs, répertoire, avis, liens réseaux sociaux, coordonnées, offres web.
-- **Ne jamais dupliquer des données directement dans plusieurs fichiers HTML**. Les composants dynamiques s'alimentent depuis `data.js`.
-- **Le code doit rester compréhensible par un développeur junior** : nommage clair, séparation des responsabilités, fonctions modulaires et bien commentées.
+### Espace Tom
+- Dashboard.
+- Demandes et statuts.
+- Calendrier / événements.
+- Fiches clients.
+- Répertoire administrable.
+- Playlists par événement.
+- Suivi montants, acomptes et reste à encaisser.
+- Devis simplifié imprimable.
+- Réinitialisation des données de démonstration.
 
----
-
-## 5. Objectifs Business du Site
-1. Promouvoir Tom Sax et asseoir son autorité artistique.
-2. Rassurer un prospect arrivant depuis Instagram/TikTok (@tomsaxoff).
-3. Présenter ses prestations (mariages, cocktails, clubbing, corporate).
-4. Montrer ses vidéos et performances live.
-5. Présenter son répertoire musical complet (filtrable et lisible).
-6. Récupérer des demandes de prestations qualifiées (formulaire avec date, lieu, type d'événement, budget).
-7. Présenter 3 offres de création de site / gestion à 270 €, 350 € et 430 €.
-8. Démontrer un espace d'administration interactif permettant à Tom d'imaginer la gestion quotidienne de son activité.
+## Interdiction
+Ne pas afficher de section de prix 270 / 350 / 430 dans le MVP lui-même.
