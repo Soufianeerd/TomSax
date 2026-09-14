@@ -1,91 +1,43 @@
-/**
- * DONNÉES CENTRALISÉES — TOM SAX
- * Toutes les données modifiables du site sont déclarées ici.
- * Aucune donnée ne doit être dupliquée en dur dans le HTML.
- */
-
 const TOM_SAX_DATA = {
-  profile: {
-    name: "Tom Sax",
-    tagline: "Saxophoniste Événementiel & Live Performer",
-    instagram: "https://www.instagram.com/tomsaxoff/",
-    handle: "@tomsaxoff",
-    bioShort: "Saxophoniste professionnel pour mariages d'exception, cocktails raffinés, soirées privées et sets clubbing.",
-    stats: {
-      performancesCount: "150+",
-      rating: "5.0",
-      repertoireSize: "100+"
-    }
-  },
-
-  // Les 3 offres de création / gestion de site pour Tom Sax
-  offers: [
-    {
-      id: "essentiel",
-      title: "Pack Vitrine Essentiel",
-      price: 270,
-      period: "paiement unique",
-      highlight: false,
-      description: "Idéal pour débuter et convertir vos abonnés Instagram/TikTok en clients sérieux.",
-      features: [
-        "Site vitrine responsive mobile-first",
-        "Présentation des prestations & bio",
-        "Galerie vidéo & intégration réseaux",
-        "Formulaire de contact qualifié",
-        "Hébergement rapide & nom de domaine inclus 1 an",
-        "Optimisation SEO local de base"
-      ],
-      ctaText: "Choisir cette offre"
-    },
-    {
-      id: "performance",
-      title: "Pack Performance & Répertoire",
-      price: 350,
-      period: "recommandé",
-      highlight: true,
-      badge: "Plus Populaire",
-      description: "La solution complète pour valoriser l'univers musical et maximiser les réservations privées et mariages.",
-      features: [
-        "Tout le Pack Vitrine Essentiel",
-        "Module de répertoire musical interactif & filtrable",
-        "Lecteur audio d'extraits live",
-        "Demande de devis événementiel ultra-qualifiée",
-        "Design sur-mesure aux couleurs de Tom Sax",
-        "Accès à l'espace de démonstration de gestion",
-        "Mise à jour annuelle du répertoire incluse"
-      ],
-      ctaText: "Sélectionner le Pack Performance"
-    },
-    {
-      id: "elite",
-      title: "Pack Signature & Gestion",
-      price: 430,
-      period: "clé en main",
-      highlight: false,
-      description: "Accompagnement haut de gamme avec espace de suivi et gestion continue de votre présence digitale.",
-      features: [
-        "Tout le Pack Performance",
-        "Espace de gestion et suivi des leads / contrats",
-        "Génération automatique d'estimations tarifaires",
-        "Intégration directe WhatsApp Business & calendrier",
-        "Optimisation avancée des temps de chargement (Core Web Vitals)",
-        "Support technique prioritaire 7j/7 & maintenance continue"
-      ],
-      ctaText: "Opter pour l'accompagnement complet"
-    }
+  profile:{name:'Tom Sax',tagline:'Saxophoniste événementiel & live performer',instagram:'https://www.instagram.com/tomsaxoff/',handle:'@tomsaxoff'},
+  services:[
+    {id:'ceremonie',title:'Cérémonie & émotion',text:'Entrée, cérémonie, sortie, première danse et moments symboliques, avec une sélection musicale adaptée au rythme du moment.',meta:'Mariage · Émotion · Sur mesure'},
+    {id:'cocktail',title:'Cocktail & vin d’honneur',text:'Une présence chic et mobile pour accompagner les échanges : pop, soul, lounge, jazz, chanson française et titres reconnaissables.',meta:'Cocktail · Lounge · Pop'},
+    {id:'dj-sax',title:'DJ + Sax live',text:'Des interventions live au cœur de la soirée, en coordination avec le DJ, pour créer des pics d’énergie sans casser le flow du dancefloor.',meta:'Soirée · Club · Dance'},
+    {id:'events',title:'Événements privés & professionnels',text:'Anniversaire, entreprise, restaurant, gala ou soirée privée : un format modulable selon le lieu, la durée et l’ambiance.',meta:'Corporate · Privé · Hospitality'}
   ],
-
-  // Répertoire musical : sera complété après lecture du fichier fourni par l'utilisateur
-  repertoire: [],
-
-  // Prestations événementielles
-  services: [],
-
-  // Vidéos et médias
-  media: []
+  media:[
+    {id:'m1',type:'Instagram',title:'Entrée & émotion',occasion:'Mariage',url:'https://www.instagram.com/tomsaxoff/'},
+    {id:'m2',type:'Instagram',title:'Cocktail live',occasion:'Cocktail',url:'https://www.instagram.com/tomsaxoff/'},
+    {id:'m3',type:'Instagram',title:'DJ + Sax',occasion:'Soirée',url:'https://www.instagram.com/tomsaxoff/'},
+    {id:'m4',type:'Instagram',title:'Ambiance festive',occasion:'Événement',url:'https://www.instagram.com/tomsaxoff/'},
+    {id:'m5',type:'Instagram',title:'Set lounge',occasion:'Réception',url:'https://www.instagram.com/tomsaxoff/'},
+    {id:'m6',type:'Instagram',title:'Performance live',occasion:'Private event',url:'https://www.instagram.com/tomsaxoff/'}
+  ],
+  repertoire:[
+    ['Saxo Beat','—','Sax moderne'],['No Man No Cry','Jimmy Sax','Sax moderne'],['Una Mattina','Jimmy Sax','Sax moderne'],['Ibiza','Jul x Jimmy Sax','Sax moderne'],['Lily Was Here','Candy Dulfer','Jazz / Lounge'],['One Day / Vandaag','Bakermat','Sax moderne'],['Jubel','Klingande','Sax moderne'],['Punga','Klingande','Sax moderne'],['Only God Can Save Your Soul','Klingande','Sax moderne'],['Changes','Faul & Wad','Sax moderne'],['This Girl','Kungs','Sax moderne'],['Calabria 2007','—','Dance / Club'],['How Gee','—','Sax moderne'],
+    ['Thinking Out Loud','Ed Sheeran','Émotion'],['Careless Whisper','George Michael','Émotion'],['When I Was Your Man','Bruno Mars','Émotion'],['Die With A Smile','Bruno Mars & Lady Gaga','Émotion'],['All of Me','John Legend','Émotion'],['I’m Not The Only One','Sam Smith','Émotion'],['Fallin’','Alicia Keys','Émotion'],['If I Ain’t Got You','Alicia Keys','Émotion'],['Love Yourself','Justin Bieber','Émotion'],['La Vie en Rose','Édith Piaf','Émotion'],['L’Hymne à l’amour','Édith Piaf','Émotion'],['La Bohème','Charles Aznavour','Émotion'],['Comme d’habitude','—','Émotion'],['Les gens qui s’aiment','William Sheller','Émotion'],['Sensualité','Axelle Red','Émotion'],['Bésame Mucho','—','Émotion'],['Ti Amo','—','Émotion'],['Alléluia','—','Émotion'],
+    ['Suavemente','Soolking','Latino'],['My Salsa','Franglish','Latino'],['Havana','—','Latino'],['Señorita','—','Latino'],['Contra La Pared','Sean Paul & J Balvin','Latino'],['Danza Kuduro','—','Latino'],['Pepas','Farruko','Latino'],['Fireball','Pitbull','Latino'],['Andalouse','Kendji Girac','Latino'],['Gitano','Kendji Girac','Latino'],['Cool','Kendji Girac','Latino'],['Baiana','—','Latino'],['Ma Chérie','—','Latino'],['Welcome to St Tropez','—','Latino'],
+    ['Treasure','Bruno Mars','Funk / Groove'],['Uptown Funk','Bruno Mars','Funk / Groove'],['Blurred Lines','Robin Thicke','Funk / Groove'],['Billie Jean','Michael Jackson','Funk / Groove'],['Happy','Pharrell Williams','Funk / Groove'],['Worth It','Fifth Harmony','Funk / Groove'],['Give Me The Night','George Benson','Funk / Groove'],['Street Life','The Crusaders','Funk / Groove'],['Just The Two of Us','Bill Withers','Funk / Groove'],['Isn’t She Lovely','Stevie Wonder','Funk / Groove'],
+    ['Attention','Charlie Puth','Pop'],['How Long','Charlie Puth','Pop'],['Sugar','Maroon 5','Pop'],['Girls Like You','Maroon 5','Pop'],['Memories','Maroon 5','Pop'],['I Feel It Coming','The Weeknd','Pop'],['How Deep Is Your Love','—','Pop'],['Bad Guy','Billie Eilish','Pop'],['Dance Monkey','—','Pop'],['Ride It','—','Pop'],['Lose Control','—','Pop'],['Peaches','Justin Bieber','Pop'],['Kiss Me More','Doja Cat','Pop'],['Woman','Doja Cat','Pop'],['Cold Heart','Elton John & Dua Lipa','Pop'],['Talk Dirty','Jason Derulo','Pop'],['Savage Love','Jason Derulo','Pop'],['Dancing','Jason Derulo','Pop'],['Ready or Not','Fugees','Pop'],
+    ['Freed From Desire','Gala','Dance / Club'],['The Rhythm of the Night','Corona','Dance / Club'],['Sun Goes Down','Robin Schulz','Dance / Club'],['Paradise','DJ Snake','Dance / Club'],['Let’s Go','Jaden Bojsen','Dance / Club'],['Jérusalema','—','Dance / Club'],['Melodrama','—','Dance / Club'],
+    ['Salé','Niska','Urbain / Afro'],['Kalash','Niska','Urbain / Afro'],['Spider','Gims','Urbain / Afro'],['Parisienne','Gims','Urbain / Afro'],['Ninao','Gims','Urbain / Afro'],['Catchu','L’Artiste','Urbain / Afro'],['Chocolat','L’Artiste','Urbain / Afro'],['Joli Bébé','Naza','Urbain / Afro'],['Avec Classe','Corneille & Aya Nakamura','Urbain / Afro'],['Morose','Damso','Urbain / Afro'],['Mwaka Moon','Damso & Kalash','Urbain / Afro'],['N’y pense plus','Tayc','Urbain / Afro'],['Dodo','Tayc','Urbain / Afro'],['Laisse-moi','Keblack','Urbain / Afro'],['Match Nul','Éloquence','Urbain / Afro'],['Ne reviens pas','Heuss L’enfoiré','Urbain / Afro'],['Femme Like U','K-Maro','Urbain / Afro'],['Tu m’oublieras','Larusso','Urbain / Afro'],['Un jour je marierai un ange','Pierre de Maere','Urbain / Afro'],
+    ['Bella Ciao','—','Jazz / Lounge'],['Take Five','Dave Brubeck','Jazz / Lounge']
+  ].map((s,i)=>({id:'song-'+(i+1),title:s[0],artist:s[1],category:s[2],visible:true,featured:['Careless Whisper','Lily Was Here','Jubel','Calabria 2007','Take Five','La Vie en Rose'].includes(s[0])})),
+  reviews:[
+    {name:'Camille & Mehdi',event:'Mariage',city:'Metz',text:'Une présence élégante au cocktail puis beaucoup d’énergie pendant la soirée.',rating:5,demo:true},
+    {name:'Julie',event:'Anniversaire',city:'Nancy',text:'Le sax a vraiment donné une autre dimension à l’ambiance sans prendre toute la place.',rating:5,demo:true},
+    {name:'Entreprise Nova',event:'Corporate',city:'Luxembourg',text:'Une prestation fluide, adaptée au lieu et au public. Très bon rendu pendant le cocktail.',rating:5,demo:true}
+  ],
+  demo:{
+    leads:[
+      {id:'lead-1001',firstName:'Sarah',lastName:'Yanis',email:'sarah@example.com',phone:'06 00 00 00 01',eventType:'Mariage',eventDate:'2027-05-23',location:'Metz',guestCount:'150',moment:'Cocktail + soirée',message:'Nous cherchons une ambiance chic au cocktail puis plus festive avec notre DJ.',status:'Nouveau',createdAt:'2026-09-14T12:00:00.000Z',demo:true},
+      {id:'lead-1002',firstName:'Clara',lastName:'Martin',email:'clara@example.com',phone:'06 00 00 00 02',eventType:'Corporate',eventDate:'2027-06-06',location:'Luxembourg',guestCount:'90',moment:'Cocktail',message:'Afterwork clients, format élégant.',status:'À contacter',createdAt:'2026-09-13T14:30:00.000Z',demo:true}
+    ],
+    events:[
+      {id:'evt-1',client:'Sarah & Yanis',date:'2027-05-23',location:'Metz',type:'Mariage',service:'Cocktail + soirée',amount:700,deposit:200,status:'Confirmé',notes:'Prévoir un échange avec le DJ.',playlist:{Cocktail:['Jubel','Lily Was Here'],Ouverture:['Fallin’'],Soirée:['Calabria 2007','Freed From Desire']},demo:true},
+      {id:'evt-2',client:'Entreprise Nova',date:'2027-06-06',location:'Luxembourg',type:'Corporate',service:'Cocktail',amount:520,deposit:150,status:'Option',notes:'Installation à confirmer.',playlist:{Cocktail:['Just The Two of Us','Give Me The Night']},demo:true}
+    ]
+  }
 };
-
-// Export pour modules ou exposition globale
-if (typeof window !== "undefined") {
-  window.TOM_SAX_DATA = TOM_SAX_DATA;
-}
+window.TOM_SAX_DATA=TOM_SAX_DATA;
