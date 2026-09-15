@@ -1,8 +1,26 @@
 :root {
-  --ink:#0a0a0a; --ink-2:#111316; --paper:#f3efe7; --paper-2:#e7e0d4; --white:#fff;
-  --gold:#c3a36a; --gold-2:#9d7d49; --muted:#9a9a9a; --line:rgba(255,255,255,.13); --line-dark:rgba(10,10,10,.16);
-  --success:#2f8f6b; --warning:#c48a28; --danger:#ad4f4f;
-  --serif:'Cormorant Garamond', Georgia, serif; --sans:'Manrope', system-ui, sans-serif;
-  --container:1200px; --pad:clamp(1.1rem,4vw,3rem);
+  --ink: #090a0a;
+  --ink-2: #101112;
+  --ink-3: #161718;
+  --paper: #f6f2ec;
+  --paper-2: #ede7dc;
+  --white: #ffffff;
+  --gold: #c39a58;
+  --gold-light: #d8b273;
+  --gold-deep: #a67d3e;
+  --muted: #757069;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-dark: rgba(20, 20, 20, 0.12);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --container: 1440px;
 }
-@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
