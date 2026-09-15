@@ -25,12 +25,77 @@
     }
   });
 
-  const onScroll=()=>header?.classList.toggle('scrolled',window.scrollY>24);
-  onScroll();
-  window.addEventListener('scroll',onScroll,{passive:true});
+  // Smart Header : compact au scroll (>24px), auto-hide au scroll bas (>120px), réapparition au scroll haut
+  let lastScrollY = window.scrollY;
+  const SCROLL_THRESHOLD = 120;
+  const DELTA_TOLERANCE = 4;
+  let isNavigatingAnchor = false;
+  let anchorNavTimeout = null;
 
-  window.addEventListener('resize',()=>{
-    if(window.innerWidth>820)setMenu(false);
+  const handleHeader = () => {
+    const currentScrollY = window.scrollY;
+    const isMobileOpen = mobileNav?.classList.contains('open');
+
+    if (isMobileOpen) {
+      header?.classList.remove('header-hidden');
+      return;
+    }
+
+    if (currentScrollY > 24) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+      header?.classList.remove('header-hidden');
+    }
+
+    if (isNavigatingAnchor) {
+      header?.classList.remove('header-hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY > SCROLL_THRESHOLD) {
+      if (currentScrollY > lastScrollY + DELTA_TOLERANCE) {
+        // Défilement vers le bas : masquer le header
+        header?.classList.add('header-hidden');
+      } else if (currentScrollY < lastScrollY - DELTA_TOLERANCE) {
+        // Défilement vers le haut : réafficher le header compact
+        header?.classList.remove('header-hidden');
+      }
+    } else {
+      header?.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  };
+
+  handleHeader();
+  window.addEventListener('scroll', handleHeader, { passive: true });
+
+  // Réaffichage garanti lors d'un clic d'ancre ou changement de hash
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', () => {
+      isNavigatingAnchor = true;
+      header?.classList.remove('header-hidden');
+      clearTimeout(anchorNavTimeout);
+      anchorNavTimeout = setTimeout(() => {
+        isNavigatingAnchor = false;
+        lastScrollY = window.scrollY;
+      }, 900);
+    });
+  });
+  window.addEventListener('hashchange', () => {
+    isNavigatingAnchor = true;
+    header?.classList.remove('header-hidden');
+    clearTimeout(anchorNavTimeout);
+    anchorNavTimeout = setTimeout(() => {
+      isNavigatingAnchor = false;
+      lastScrollY = window.scrollY;
+    }, 900);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820) setMenu(false);
   });
 
   // Actions contextuelles des cartes prestations

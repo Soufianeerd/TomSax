@@ -18,7 +18,13 @@
   const categories = ['Tous', ...new Set(data.map(s => s.category))];
   let activeCategory = 'Tous';
   let isExpanded = false;
-  const INITIAL_LIMIT = 9;
+  const INITIAL_LIMIT = 8;
+
+  // Mise à jour dynamique de la description avec le nombre réel de morceaux
+  const descEl = document.getElementById('repertoire-desc');
+  if (descEl && data.length) {
+    descEl.textContent = `Un répertoire de ${data.length} titres soigneusement sélectionnés, des classiques intemporels aux hits électro et pop actuels. Recherchez un titre ou filtrez selon l'ambiance souhaitée.`;
+  }
 
   // Création des filtres par genre
   filters.innerHTML = categories.map(c =>
@@ -75,7 +81,7 @@
         toggleBtn.style.display = 'inline-flex';
         toggleBtn.textContent = isExpanded
           ? 'Réduire le répertoire ↑'
-          : `Voir tout le répertoire (${matched.length} morceaux) ↓`;
+          : `Voir les ${matched.length} morceaux ↓`;
       }
     }
   };
