@@ -324,24 +324,20 @@
                   <label><span class="label-text">Lieu de l’événement <span class="req">*</span></span>
                     <input name="location" required placeholder="Ville, salle ou domaine">
                   </label>
-                  <label><span class="label-text">Nombre d’invités estimé</span>
-                    <input name="guestCount" type="number" min="1" placeholder="Ex. 120">
+                  <label><span class="label-text">Moment souhaité <span class="req">*</span></span>
+                    <select name="moment" required>
+                      <option value="">Sélectionnez un format</option>
+                      <option value="Cérémonie uniquement">Cérémonie uniquement</option>
+                      <option value="Cocktail & Vin d'honneur">Cocktail & Vin d'honneur</option>
+                      <option value="Cocktail + Soirée dansante">Cocktail + Soirée dansante</option>
+                      <option value="Soirée dansante / DJ + Sax live">Soirée dansante / DJ + Sax live</option>
+                      <option value="Journée complète / Sur-mesure">Journée complète / Sur-mesure</option>
+                    </select>
                   </label>
                 </div>
 
-                <label><span class="label-text">Moment souhaité <span class="req">*</span></span>
-                  <select name="moment" required>
-                    <option value="">Sélectionnez le ou les moments</option>
-                    <option value="Cérémonie uniquement">Cérémonie uniquement</option>
-                    <option value="Cocktail & Vin d'honneur">Cocktail & Vin d'honneur</option>
-                    <option value="Cocktail + Soirée dansante">Cocktail + Soirée dansante</option>
-                    <option value="Soirée dansante / DJ + Sax live">Soirée dansante / DJ + Sax live</option>
-                    <option value="Journée complète / Sur-mesure">Journée complète / Sur-mesure</option>
-                  </select>
-                </label>
-
-                <label><span class="label-text">Votre projet & inspirations particulières</span>
-                  <textarea name="message" rows="4" placeholder="Ambiance souhaitée, morceaux importants, présence d'un DJ, contraintes horaires..."></textarea>
+                <label><span class="label-text">Votre message</span>
+                  <textarea name="message" rows="3" placeholder="Précisions sur votre événement, inspirations, contraintes..."></textarea>
                 </label>
 
                 <label class="consent">
