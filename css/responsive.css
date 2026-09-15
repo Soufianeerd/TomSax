@@ -207,6 +207,23 @@
   .services, .live, .about, .repertoire {
     padding: 80px 0;
   }
+  .site-header.scrolled {
+    height: 72px;
+  }
+  #prestations,
+  #live,
+  #apropos,
+  #repertoire,
+  #contact {
+    scroll-margin-top: 80px;
+  }
+  .modal-card {
+    padding: 36px 26px 30px;
+  }
+  .modal-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .section-top {
     flex-direction: column;
     align-items: flex-start;
@@ -249,6 +266,28 @@
     height: 72px;
     width: 100%;
   }
+  .site-header.scrolled {
+    height: 64px;
+  }
+  #prestations,
+  #live,
+  #apropos,
+  #repertoire,
+  #contact {
+    scroll-margin-top: 72px;
+  }
+  .modal-overlay {
+    padding: 16px;
+  }
+  .modal-card {
+    padding: 28px 18px 24px;
+  }
+  .modal-close {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
   .brand-line {
     font-size: 26px;
   }
@@ -258,6 +297,9 @@
   .mobile-nav {
     top: 72px;
     padding: 24px 20px;
+  }
+  .site-header.scrolled ~ .mobile-nav {
+    top: 64px;
   }
   .hero {
     height: 680px;

@@ -31,7 +31,7 @@
 
   function leadTable(rows){
     return `<table class="admin-table"><thead><tr><th>Client</th><th>Événement</th><th>Date</th><th>Lieu</th><th>Statut</th><th></th></tr></thead><tbody>
-      ${rows.map(l=>`<tr><td>${l.firstName} ${l.lastName}</td><td>${l.eventType}</td><td>${l.eventDate||'—'}</td><td>${l.location||'—'}</td><td><span class="chip ${cls(l.status)}">${l.status}</span></td><td><button class="admin-action" data-lead="${l.id}">Ouvrir</button></td></tr>`).join('')}
+      ${rows.map(l=>`<tr><td>${l.firstName} ${l.lastName||''}</td><td>${l.eventType}${l.requestedSong ? `<br><small style="color: #b98e4b; font-weight: 600;">Morceau : ${l.requestedSong}</small>` : ''}</td><td>${l.eventDate||'—'}</td><td>${l.location||'—'}</td><td><span class="chip ${cls(l.status)}">${l.status}</span></td><td><button class="admin-action" data-lead="${l.id}">Ouvrir</button></td></tr>`).join('')}
     </tbody></table>`;
   }
 
@@ -55,9 +55,33 @@
 
   function openLead(id){
     const l=state.leads.find(x=>x.id===id);if(!l)return;
-    document.getElementById('lead-detail').innerHTML=`<hr style="margin:1.5rem 0;border:0;border-top:1px solid #ddd">
-      <div class="lead-detail"><h2>${l.firstName} ${l.lastName}</h2>
-      <dl><dt>Événement</dt><dd>${l.eventType}</dd><dt>Date</dt><dd>${l.eventDate}</dd><dt>Lieu</dt><dd>${l.location}</dd><dt>Invités</dt><dd>${l.guestCount||'—'}</dd><dt>Moment</dt><dd>${l.moment||'—'}</dd><dt>Email</dt><dd>${l.email}</dd><dt>Téléphone</dt><dd>${l.phone||'—'}</dd><dt>Message</dt><dd>${l.message||'—'}</dd></dl>
+    let detailEl = document.getElementById('lead-detail');
+    if(!detailEl){
+      state.view = 'demandes';
+      render();
+      detailEl = document.getElementById('lead-detail');
+    }
+    if(!detailEl)return;
+    const isRepertoire = l.source === 'repertoire' || Boolean(l.requestedSong);
+    const repertoireHtml = isRepertoire ? `
+      <dt style="color:#b98e4b;font-weight:700;">Origine</dt><dd><b>Répertoire musical</b></dd>
+      <dt>Morceau demandé</dt><dd><b>${l.requestedSong || '—'}</b></dd>
+      <dt>Artiste</dt><dd>${l.requestedArtist || '—'}</dd>
+      <dt>Lien</dt><dd>${l.requestedSongLink ? `<a href="${l.requestedSongLink}" target="_blank" rel="noreferrer" style="color:#b98e4b;text-decoration:underline;">${l.requestedSongLink}</a>` : '—'}</dd>
+    ` : '';
+    detailEl.innerHTML=`<hr style="margin:1.5rem 0;border:0;border-top:1px solid #ddd">
+      <div class="lead-detail"><h2>${l.firstName} ${l.lastName||''}</h2>
+      <dl>
+        ${repertoireHtml}
+        <dt>Événement</dt><dd>${l.eventType}</dd>
+        <dt>Date</dt><dd>${l.eventDate||'—'}</dd>
+        <dt>Lieu</dt><dd>${l.location||'—'}</dd>
+        <dt>Invités</dt><dd>${l.guestCount||'—'}</dd>
+        <dt>Moment</dt><dd>${l.moment||'—'}</dd>
+        <dt>Email</dt><dd>${l.email}</dd>
+        <dt>Téléphone</dt><dd>${l.phone||'—'}</dd>
+        <dt>Message</dt><dd>${l.message||'—'}</dd>
+      </dl>
       <label>Statut <select id="lead-status">${['Nouveau','À contacter','Devis envoyé','Option','Confirmé','Refusé','Terminé'].map(s=>`<option ${s===l.status?'selected':''}>${s}</option>`).join('')}</select></label>
       <button class="admin-primary" id="save-lead" style="max-width:220px">Enregistrer</button></div>`;
     document.getElementById('save-lead').onclick=()=>{l.status=document.getElementById('lead-status').value;save();toast('Statut mis à jour');render()};

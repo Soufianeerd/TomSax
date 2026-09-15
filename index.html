@@ -34,6 +34,8 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
   <!-- 1. Header -->
   <header class="site-header" id="top">
     <div class="header-container">
@@ -63,11 +65,10 @@
       <a href="#apropos">À propos</a>
       <a href="#repertoire">Répertoire</a>
       <a href="#contact">Contact</a>
-      <a href="admin/login.html">Espace Tom</a>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <!-- 2. Hero -->
     <section class="hero" aria-labelledby="hero-title">
       <img class="hero-image" src="assets/images/webp/04-gold-smoke-portrait.webp" alt="Tom Sax au saxophone sous une lumière dorée scénique" width="1600" height="1066" fetchpriority="high">
@@ -91,7 +92,6 @@
             <div class="socials">
               <a href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer" aria-label="Instagram de Tom Sax">◎</a>
               <a href="https://www.tiktok.com/@tomsaxoff" target="_blank" rel="noreferrer" aria-label="TikTok de Tom Sax">♪</a>
-              <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube de Tom Sax">▻</a>
             </div>
           </div>
         </aside>
@@ -134,38 +134,42 @@
 
         <div class="service-grid">
           <article class="service-card reveal">
-            <img src="assets/images/webp/02-wedding-groom.webp" alt="Ambiance raffinée de mariage avec marié et invités" decoding="async">
+            <img src="assets/images/webp/02-wedding-groom.webp" alt="Ambiance raffinée de mariage avec marié et invités" loading="lazy" decoding="async">
             <div class="service-shade"></div>
             <div class="service-copy">
               <h3>Cérémonie & émotion</h3>
               <p>Entrées, cérémonie laïque ou religieuse, sortie, ouverture de bal… Des instants inoubliables empreints de sensibilité.</p>
+              <a class="service-action" href="#contact" data-service="ceremonie">En parler avec Tom <span>→</span></a>
             </div>
           </article>
 
           <article class="service-card reveal">
-            <img src="assets/images/webp/05-garden-cocktail.webp" alt="Tom Sax en prestation au cocktail dans un jardin ensoleillé" decoding="async">
+            <img src="assets/images/webp/05-garden-cocktail.webp" alt="Tom Sax en prestation au cocktail dans un jardin ensoleillé" loading="lazy" decoding="async">
             <div class="service-shade"></div>
             <div class="service-copy">
               <h3>Cocktail & vin d’honneur</h3>
               <p>Une ambiance chic et lounge au saxophone pour installer une atmosphère chaleureuse et élégante parmi vos convives.</p>
+              <a class="service-action" href="#contact" data-service="cocktail">En parler avec Tom <span>→</span></a>
             </div>
           </article>
 
           <article class="service-card reveal">
-            <img src="assets/images/webp/07-dj-dancefloor.webp" alt="Tom Sax sur scène aux côtés du DJ face à la foule" decoding="async">
+            <img src="assets/images/webp/07-dj-dancefloor.webp" alt="Tom Sax sur scène aux côtés du DJ face à la foule" loading="lazy" decoding="async">
             <div class="service-shade"></div>
             <div class="service-copy">
               <h3>DJ + Sax live</h3>
               <p>Une symbiose explosive entre électro et saxophone en direct pour enflammer la piste de danse et marquer les esprits.</p>
+              <a class="service-action" href="#contact" data-service="djsax">En parler avec Tom <span>→</span></a>
             </div>
           </article>
 
           <article class="service-card reveal">
-            <img src="assets/images/webp/10-gold-smoke-portrait-2.webp" alt="Tom Sax en performance live sous les lumières scéniques" decoding="async">
+            <img src="assets/images/webp/10-gold-smoke-portrait-2.webp" alt="Tom Sax en performance live sous les lumières scéniques" loading="lazy" decoding="async">
             <div class="service-shade"></div>
             <div class="service-copy">
               <h3>Événements privés & corporate</h3>
               <p>Galas, lancements de marque, soirées d'entreprise, rooftops, réceptions privées d'exception… Une prestation haut de gamme.</p>
+              <a class="service-action" href="#contact" data-service="corporate">En parler avec Tom <span>→</span></a>
             </div>
           </article>
         </div>
@@ -187,36 +191,36 @@
         <div class="live-gallery">
           <!-- Col 1: tall card -->
           <figure class="gallery-item gallery-tall reveal">
-            <img src="assets/images/webp/03-green-live.webp" alt="Tom Sax en performance live sous éclairage scénique émeraude" decoding="async">
+            <img src="assets/images/webp/03-green-live.webp" alt="Tom Sax en performance live sous éclairage scénique émeraude" loading="lazy" decoding="async">
             <div class="gallery-caption">Performance live électrisante</div>
           </figure>
 
           <!-- Col 2: two stacked cards -->
           <div class="gallery-stack">
             <figure class="gallery-item gallery-medium reveal">
-              <img src="assets/images/webp/06-sax-detail.webp" alt="Détail et orfèvrerie des clés du saxophone" decoding="async">
+              <img src="assets/images/webp/06-sax-detail.webp" alt="Détail et orfèvrerie des clés du saxophone" loading="lazy" decoding="async">
               <div class="gallery-caption">L'artisanat du cuivre & son acoustique</div>
             </figure>
             <figure class="gallery-item gallery-medium reveal">
-              <img src="assets/images/webp/09-wedding-dance.webp" alt="Danse et ambiance festive lors d'une soirée événementielle" decoding="async">
+              <img src="assets/images/webp/09-wedding-dance.webp" alt="Danse et ambiance festive lors d'une soirée événementielle" loading="lazy" decoding="async">
               <div class="gallery-caption">L'énergie festive partagée</div>
             </figure>
           </div>
 
           <!-- Col 3: tall card -->
           <figure class="gallery-item gallery-tall reveal">
-            <img src="assets/images/webp/10-gold-smoke-portrait-2.webp" alt="Tom Sax sur scène au milieu des volutes dorées" decoding="async">
+            <img src="assets/images/webp/10-gold-smoke-portrait-2.webp" alt="Tom Sax sur scène au milieu des volutes dorées" loading="lazy" decoding="async">
             <div class="gallery-caption">Ambiance scénique signature</div>
           </figure>
 
           <!-- Row 2: wide card + standard card -->
           <figure class="gallery-item gallery-wide reveal">
-            <img src="assets/images/webp/07-dj-dancefloor.webp" alt="Tom Sax sur le dancefloor aux côtés de la régie DJ" decoding="async">
+            <img src="assets/images/webp/07-dj-dancefloor.webp" alt="Tom Sax sur le dancefloor aux côtés de la régie DJ" loading="lazy" decoding="async">
             <div class="gallery-caption">Fusion DJ set & saxophone devant le public</div>
           </figure>
 
           <figure class="gallery-item gallery-standard reveal">
-            <img src="assets/images/webp/02-wedding-groom.webp" alt="Célébration et élégance lors d'un mariage" decoding="async">
+            <img src="assets/images/webp/02-wedding-groom.webp" alt="Célébration et élégance lors d'un mariage" loading="lazy" decoding="async">
             <div class="gallery-caption">Émotion et complicité</div>
           </figure>
         </div>
@@ -227,7 +231,7 @@
     <section class="about" id="apropos" aria-labelledby="about-title">
       <div class="container about-grid">
         <figure class="about-photo reveal">
-          <img src="assets/images/webp/01-sunset-back.webp" alt="Tom Sax contemplant le coucher de soleil avec son saxophone" decoding="async">
+          <img src="assets/images/webp/01-sunset-back.webp" alt="Tom Sax contemplant le coucher de soleil avec son saxophone" loading="lazy" decoding="async">
         </figure>
 
         <div class="about-center reveal">
@@ -246,7 +250,7 @@
         </div>
 
         <figure class="about-photo reveal">
-          <img src="assets/images/webp/08-night-portrait.webp" alt="Tom Sax en portrait nocturne intense sur scène" decoding="async">
+          <img src="assets/images/webp/08-night-portrait.webp" alt="Tom Sax en portrait nocturne intense sur scène" loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
@@ -283,7 +287,7 @@
     <!-- 8. Vérifier ma date / Contact (50/50 Split) -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-visual">
-        <img src="assets/images/webp/11-sunset-profile.webp" alt="Tom Sax silhouette profil au saxophone face au soleil couchant" decoding="async">
+        <img src="assets/images/webp/11-sunset-profile.webp" alt="Tom Sax silhouette profil au saxophone face au soleil couchant" loading="lazy" decoding="async">
         <div class="contact-visual-overlay"></div>
         <div class="contact-visual-copy reveal">
           <p class="section-label gold">VOTRE ÉVÉNEMENT</p>
@@ -414,6 +418,80 @@
       <small>© 2026 Tom Sax. Tous droits réservés.</small>
     </div>
   </footer>
+
+  <!-- Modale : Proposer un morceau -->
+  <div class="modal-overlay" id="suggest-modal" role="dialog" aria-modal="true" aria-labelledby="modal-suggest-title" hidden>
+    <div class="modal-card">
+      <button class="modal-close" type="button" id="close-suggest-modal" aria-label="Fermer la boîte de dialogue">✕</button>
+
+      <div class="modal-header">
+        <p class="section-label gold">RÉPERTOIRE</p>
+        <h2 id="modal-suggest-title">Proposer un morceau</h2>
+        <p class="modal-desc">Vous avez un morceau précis en tête ? Envoyez votre demande à Tom afin qu’il puisse vérifier s’il est possible de le préparer pour votre événement.</p>
+      </div>
+
+      <form id="suggest-form" class="modal-form" novalidate>
+        <div class="form-row">
+          <label>Morceau recherché <span class="req">*</span>
+            <input name="requestedSong" id="suggest-song" required placeholder="Titre du morceau">
+          </label>
+          <label>Artiste
+            <input name="requestedArtist" id="suggest-artist" placeholder="Artiste (facultatif)">
+          </label>
+        </div>
+
+        <label>Lien vers le morceau
+          <input name="requestedSongLink" id="suggest-link" type="url" placeholder="https://...">
+          <span class="field-hint">Spotify, Apple Music, Deezer ou autre</span>
+        </label>
+
+        <div class="form-row">
+          <label>Type d’événement <span class="req">*</span>
+            <select name="eventType" id="suggest-event-type" required>
+              <option value="">Sélectionnez un événement</option>
+              <option value="Mariage">Mariage</option>
+              <option value="Cocktail / Vin d'honneur">Cocktail / Vin d'honneur</option>
+              <option value="Soirée privée">Soirée privée</option>
+              <option value="Corporate / Entreprise">Corporate / Entreprise</option>
+              <option value="Anniversaire">Anniversaire</option>
+              <option value="Établissement / Rooftop">Établissement / Rooftop</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </label>
+          <label>Date de l’événement <span class="req">*</span>
+            <input name="eventDate" id="suggest-event-date" type="date" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Prénom <span class="req">*</span>
+            <input name="firstName" id="suggest-first-name" required autocomplete="given-name" placeholder="Votre prénom">
+          </label>
+          <label>Email <span class="req">*</span>
+            <input name="email" id="suggest-email" type="email" required autocomplete="email" placeholder="adresse@exemple.com">
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Téléphone
+            <input name="phone" id="suggest-phone" type="tel" autocomplete="tel" placeholder="06 12 34 56 78 (facultatif)">
+          </label>
+        </div>
+
+        <label>Message
+          <textarea name="message" id="suggest-message" rows="3" placeholder="Précisions sur le moment souhaité, l'ambiance attendue... (facultatif)"></textarea>
+        </label>
+
+        <p class="modal-notice">La demande reste soumise à validation selon le morceau, le délai de préparation et les conditions de la prestation.</p>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-gold btn-submit">Demander à Tom <span>→</span></button>
+        </div>
+
+        <p id="suggest-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
   <script src="js/data.js"></script>
   <script src="js/animations.js"></script>

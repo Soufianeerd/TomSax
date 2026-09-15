@@ -49,13 +49,39 @@ button, input, select, textarea {
   padding-inline: 64px;
 }
 
+/* Accessibilité : Skip link */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 24px;
+  z-index: 1000;
+  padding: 12px 24px;
+  background: var(--ink);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-link:focus {
+  top: 20px;
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 /* Typographies globales */
 .section-label {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #8c734b;
+  color: #755d34; /* Contraste 5.58:1 sur fond #f6f2ec (WCAG AA >= 4.5:1) */
   margin-bottom: 12px;
 }
 
@@ -186,15 +212,38 @@ button, input, select, textarea {
    ========================================================================== */
 
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 60;
+  z-index: 90;
   height: 92px;
   color: #fff;
   display: flex;
   align-items: center;
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.scrolled {
+  background: rgba(9, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  height: 80px;
+}
+
+#prestations,
+#live,
+#apropos,
+#repertoire,
+#contact {
+  scroll-margin-top: 96px;
 }
 
 .header-container {
@@ -228,11 +277,11 @@ button, input, select, textarea {
 
 .brand small {
   font-family: var(--sans);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.6);
   margin-top: 5px;
 }
 
@@ -243,13 +292,13 @@ button, input, select, textarea {
 }
 
 .desktop-nav a {
-  position: relative;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.82);
+  padding-block: 6px;
+  position: relative;
 }
 
 .desktop-nav a:hover,
@@ -576,6 +625,27 @@ button, input, select, textarea {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.service-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(195, 154, 88, 0.45);
+  padding-bottom: 2px;
+  transition: all 0.25s ease;
+}
+
+.service-action:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+  gap: 9px;
+}
+
 /* ==========================================================================
    5. LIVE / GALERIE ÉDITORIALE
    ========================================================================== */
@@ -822,7 +892,11 @@ button, input, select, textarea {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.8);
   background: transparent;
-  padding: 8px 14px;
+  padding: 8px 16px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -841,6 +915,40 @@ button, input, select, textarea {
   border-color: var(--gold);
   color: #0b0c0c;
   font-weight: 700;
+}
+
+.music-empty-state {
+  padding: 44px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-block: 20px;
+  text-align: center;
+}
+
+.music-empty-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.music-empty-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+  max-width: 480px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.music-suggest-btn {
+  margin-inline: auto;
+}
+
+.music-empty-simple {
+  padding: 32px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
 }
 
 .music-list {
@@ -1172,4 +1280,167 @@ body.js-animate .reveal:not(.visible) {
 body.js-animate .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+/* ==========================================================================
+   10. MODALE : PROPOSER UN MORCEAU
+   ========================================================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(9, 10, 10, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay[hidden] {
+  display: none !important;
+  opacity: 0;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background: #0f1011;
+  border: 1px solid rgba(195, 154, 88, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  padding: 44px 40px 40px;
+  color: #fff;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+  outline: none;
+}
+
+.modal-header {
+  margin-bottom: 28px;
+  padding-right: 32px;
+}
+
+.modal-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.5vw, 42px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.modal-form .req {
+  color: var(--gold);
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  padding: 0 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  min-height: 48px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.modal-form select option {
+  background: #151617;
+  color: #fff;
+}
+
+.modal-form textarea {
+  min-height: 80px;
+  padding: 12px 16px;
+  resize: vertical;
+}
+
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.07);
+  outline: none;
+}
+
+.field-hint {
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: -2px;
+}
+
+.modal-notice {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  border-left: 2px solid var(--gold);
+  padding-left: 12px;
+  margin-top: 4px;
+}
+
+.modal-actions {
+  margin-top: 8px;
 }
