@@ -84,17 +84,6 @@
             <a class="btn btn-outline" href="#live">Voir l'ambiance <span>→</span></a>
           </div>
         </div>
-
-        <aside class="hero-side">
-          <div class="vertical-copy">MARIAGE · ÉMOTION · ÉNERGIE</div>
-          <div class="follow">
-            <span>SUIVEZ-MOI</span>
-            <div class="socials">
-              <a href="https://www.instagram.com/tomsaxoff/" target="_blank" rel="noreferrer" aria-label="Instagram de Tom Sax">◎</a>
-              <a href="https://www.tiktok.com/@tomsaxoff" target="_blank" rel="noreferrer" aria-label="TikTok de Tom Sax">♪</a>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -287,81 +276,83 @@
           </div>
 
           <div class="contact-panel reveal">
-            <div class="contact-intro">
-              <p class="section-label">CONTACT</p>
-              <h2 id="contact-title">Vérifier ma date</h2>
-              <p class="contact-desc">Renseignez les détails de votre événement. Votre demande est directement enregistrée pour vous transmettre une proposition adaptée.</p>
-            </div>
-
-            <form id="event-form" class="booking-form" novalidate>
-              <div class="form-row">
-                <label>Prénom <span class="req">*</span>
-                  <input name="firstName" required autocomplete="given-name" placeholder="Votre prénom">
-                </label>
-                <label>Nom <span class="req">*</span>
-                  <input name="lastName" required autocomplete="family-name" placeholder="Votre nom">
-                </label>
+            <div class="contact-panel-inner">
+              <div class="contact-intro">
+                <p class="section-label">CONTACT</p>
+                <h2 id="contact-title">Vérifier ma date</h2>
+                <p class="contact-desc">Renseignez les détails de votre événement. Votre demande est directement enregistrée pour vous transmettre une proposition adaptée.</p>
               </div>
 
-              <div class="form-row">
-                <label>Email <span class="req">*</span>
-                  <input name="email" type="email" required autocomplete="email" placeholder="adresse@exemple.com">
-                </label>
-                <label>Téléphone <span class="req">*</span>
-                  <input name="phone" type="tel" required autocomplete="tel" placeholder="06 12 34 56 78">
-                </label>
-              </div>
+              <form id="event-form" class="booking-form" novalidate>
+                <div class="form-row">
+                  <label><span class="label-text">Prénom <span class="req">*</span></span>
+                    <input name="firstName" required autocomplete="given-name" placeholder="Votre prénom">
+                  </label>
+                  <label><span class="label-text">Nom <span class="req">*</span></span>
+                    <input name="lastName" required autocomplete="family-name" placeholder="Votre nom">
+                  </label>
+                </div>
 
-              <div class="form-row">
-                <label>Type d’événement <span class="req">*</span>
-                  <select name="eventType" required>
-                    <option value="">Sélectionnez un événement</option>
-                    <option value="Mariage">Mariage</option>
-                    <option value="Cocktail / Vin d'honneur">Cocktail / Vin d'honneur</option>
-                    <option value="Soirée privée">Soirée privée</option>
-                    <option value="Corporate / Entreprise">Corporate / Entreprise</option>
-                    <option value="Anniversaire">Anniversaire</option>
-                    <option value="Établissement / Rooftop">Établissement / Rooftop</option>
-                    <option value="Autre">Autre</option>
+                <div class="form-row">
+                  <label><span class="label-text">Email <span class="req">*</span></span>
+                    <input name="email" type="email" required autocomplete="email" placeholder="adresse@exemple.com">
+                  </label>
+                  <label><span class="label-text">Téléphone <span class="req">*</span></span>
+                    <input name="phone" type="tel" required autocomplete="tel" placeholder="06 12 34 56 78">
+                  </label>
+                </div>
+
+                <div class="form-row">
+                  <label><span class="label-text">Type d’événement <span class="req">*</span></span>
+                    <select name="eventType" required>
+                      <option value="">Sélectionnez un événement</option>
+                      <option value="Mariage">Mariage</option>
+                      <option value="Cocktail / Vin d'honneur">Cocktail / Vin d'honneur</option>
+                      <option value="Soirée privée">Soirée privée</option>
+                      <option value="Corporate / Entreprise">Corporate / Entreprise</option>
+                      <option value="Anniversaire">Anniversaire</option>
+                      <option value="Établissement / Rooftop">Établissement / Rooftop</option>
+                      <option value="Autre">Autre</option>
+                    </select>
+                  </label>
+                  <label><span class="label-text">Date souhaitée <span class="req">*</span></span>
+                    <input name="eventDate" type="date" required>
+                  </label>
+                </div>
+
+                <div class="form-row">
+                  <label><span class="label-text">Lieu de l’événement <span class="req">*</span></span>
+                    <input name="location" required placeholder="Ville, salle ou domaine">
+                  </label>
+                  <label><span class="label-text">Nombre d’invités estimé</span>
+                    <input name="guestCount" type="number" min="1" placeholder="Ex. 120">
+                  </label>
+                </div>
+
+                <label><span class="label-text">Moment souhaité <span class="req">*</span></span>
+                  <select name="moment" required>
+                    <option value="">Sélectionnez le ou les moments</option>
+                    <option value="Cérémonie uniquement">Cérémonie uniquement</option>
+                    <option value="Cocktail & Vin d'honneur">Cocktail & Vin d'honneur</option>
+                    <option value="Cocktail + Soirée dansante">Cocktail + Soirée dansante</option>
+                    <option value="Soirée dansante / DJ + Sax live">Soirée dansante / DJ + Sax live</option>
+                    <option value="Journée complète / Sur-mesure">Journée complète / Sur-mesure</option>
                   </select>
                 </label>
-                <label>Date souhaitée <span class="req">*</span>
-                  <input name="eventDate" type="date" required>
+
+                <label><span class="label-text">Votre projet & inspirations particulières</span>
+                  <textarea name="message" rows="4" placeholder="Ambiance souhaitée, morceaux importants, présence d'un DJ, contraintes horaires..."></textarea>
                 </label>
-              </div>
 
-              <div class="form-row">
-                <label>Lieu de l’événement <span class="req">*</span>
-                  <input name="location" required placeholder="Ville, salle ou domaine">
+                <label class="consent">
+                  <input type="checkbox" name="consent" required>
+                  <span>J’accepte que mes coordonnées soient utilisées uniquement pour traiter ma demande de disponibilité et de devis.</span>
                 </label>
-                <label>Nombre d’invités estimé
-                  <input name="guestCount" type="number" min="1" placeholder="Ex. 120">
-                </label>
-              </div>
 
-              <label>Moment souhaité <span class="req">*</span>
-                <select name="moment" required>
-                  <option value="">Sélectionnez le ou les moments</option>
-                  <option value="Cérémonie uniquement">Cérémonie uniquement</option>
-                  <option value="Cocktail & Vin d'honneur">Cocktail & Vin d'honneur</option>
-                  <option value="Cocktail + Soirée dansante">Cocktail + Soirée dansante</option>
-                  <option value="Soirée dansante / DJ + Sax live">Soirée dansante / DJ + Sax live</option>
-                  <option value="Journée complète / Sur-mesure">Journée complète / Sur-mesure</option>
-                </select>
-              </label>
-
-              <label>Votre projet & inspirations particulières
-                <textarea name="message" rows="4" placeholder="Ambiance souhaitée, morceaux importants, présence d'un DJ, contraintes horaires..."></textarea>
-              </label>
-
-              <label class="consent">
-                <input type="checkbox" name="consent" required>
-                <span>J’accepte que mes coordonnées soient utilisées uniquement pour traiter ma demande de disponibilité et de devis.</span>
-              </label>
-
-              <button class="btn btn-submit" type="submit">Envoyer ma demande <span>→</span></button>
-              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-            </form>
+                <button class="btn btn-submit" type="submit">Envoyer ma demande <span>→</span></button>
+                <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -400,7 +391,6 @@
         <div class="footer-nav">
           <a href="legal/mentions-legales.html">Mentions légales</a>
           <a href="legal/confidentialite.html">Confidentialité</a>
-          <a href="#top" class="back-to-top">Haut de page ↑</a>
         </div>
       </div>
     </div>

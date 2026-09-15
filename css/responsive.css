@@ -23,9 +23,6 @@
   .repertoire-layout {
     gap: 48px;
   }
-  .contact-panel {
-    padding: 80px 48px;
-  }
 }
 
 /* Tablette Paysage / Petit Laptop (max-width: 1024px) */
@@ -92,18 +89,6 @@
   .music-list {
     grid-template-columns: 1fr;
     gap: 0;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .contact-visual {
-    position: relative;
-    top: 0;
-    height: 460px;
-  }
-  .contact-panel {
-    padding: 0;
   }
 }
 
@@ -204,9 +189,6 @@
   .hero h1 {
     font-size: 56px;
   }
-  .hero-side {
-    display: none;
-  }
   .services, .live, .about, .repertoire {
     padding: 80px 0;
   }
@@ -246,6 +228,29 @@
   .footer-content {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+  .contact {
+    padding: 80px 0 90px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-visual {
+    position: relative;
+    top: 0;
+    height: 380px;
+  }
+  .contact-panel-inner {
+    max-width: 100%;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .booking-form .btn-submit {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -416,7 +421,7 @@
   .contact-visual {
     position: relative;
     top: 0;
-    height: 360px;
+    height: 380px;
     min-height: auto;
   }
   .contact-visual-copy {
@@ -432,10 +437,11 @@
   }
   .form-row {
     grid-template-columns: 1fr;
-    gap: 16px;
+    row-gap: 20px;
   }
-  .btn-submit {
+  .booking-form .btn-submit {
     width: 100%;
+    justify-content: center;
   }
   .footer {
     padding: 50px 0 30px;
