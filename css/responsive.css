@@ -230,23 +230,23 @@
     gap: 36px;
   }
   .contact {
-    padding: 80px 0 90px;
+    padding: 48px 0 60px;
   }
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
   .contact-visual {
     position: relative;
     top: 0;
-    height: 380px;
+    height: 320px;
   }
   .contact-panel-inner {
     max-width: 100%;
   }
   .form-row {
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    row-gap: 12px;
   }
   .booking-form .btn-submit {
     width: 100%;
@@ -416,12 +416,12 @@
   }
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
   }
   .contact-visual {
     position: relative;
     top: 0;
-    height: 380px;
+    height: 280px;
     min-height: auto;
   }
   .contact-visual-copy {
@@ -430,14 +430,14 @@
     bottom: 20px;
   }
   .contact-visual-copy h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
   .contact-panel {
     padding: 0;
   }
   .form-row {
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    row-gap: 12px;
   }
   .booking-form .btn-submit {
     width: 100%;
