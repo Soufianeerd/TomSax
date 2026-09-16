@@ -401,67 +401,32 @@
       <button class="modal-close" type="button" id="close-suggest-modal" aria-label="Fermer la boîte de dialogue">✕</button>
 
       <div class="modal-header">
-        <p class="section-label gold">RÉPERTOIRE</p>
+        <p class="modal-label">RÉPERTOIRE</p>
         <h2 id="modal-suggest-title">Proposer un morceau</h2>
-        <p class="modal-desc">Vous avez un morceau précis en tête ? Envoyez votre demande à Tom afin qu’il puisse vérifier s’il est possible de le préparer pour votre événement.</p>
+        <p class="modal-desc">Vous avez un morceau précis en tête ? Indiquez simplement le titre, l’artiste si vous le souhaitez, et éventuellement un lien. Tom vérifiera s’il peut l’intégrer à votre événement.</p>
       </div>
 
       <form id="suggest-form" class="modal-form" novalidate>
-        <div class="form-row">
-          <label>Morceau recherché <span class="req">*</span>
-            <input name="requestedSong" id="suggest-song" required placeholder="Titre du morceau">
+        <div class="modal-form-row">
+          <label class="modal-field">
+            <span class="modal-field-label">Morceau recherché <span class="req">*</span></span>
+            <input name="requestedSong" id="suggest-song" required placeholder="Titre du morceau" autocomplete="off">
           </label>
-          <label>Artiste
-            <input name="requestedArtist" id="suggest-artist" placeholder="Artiste (facultatif)">
+          <label class="modal-field">
+            <span class="modal-field-label">Artiste</span>
+            <input name="requestedArtist" id="suggest-artist" placeholder="Artiste (facultatif)" autocomplete="off">
           </label>
         </div>
 
-        <label>Lien vers le morceau
-          <input name="requestedSongLink" id="suggest-link" type="url" placeholder="https://...">
-          <span class="field-hint">Spotify, Apple Music, Deezer ou autre</span>
+        <label class="modal-field modal-field-full">
+          <span class="modal-field-label">Lien vers le morceau</span>
+          <input name="requestedSongLink" id="suggest-link" type="url" placeholder="https://..." autocomplete="off">
+          <span class="field-hint">Spotify, Apple Music, Deezer ou autre lien utile</span>
         </label>
-
-        <div class="form-row">
-          <label>Type d’événement <span class="req">*</span>
-            <select name="eventType" id="suggest-event-type" required>
-              <option value="">Sélectionnez un événement</option>
-              <option value="Mariage">Mariage</option>
-              <option value="Cocktail / Vin d'honneur">Cocktail / Vin d'honneur</option>
-              <option value="Soirée privée">Soirée privée</option>
-              <option value="Corporate / Entreprise">Corporate / Entreprise</option>
-              <option value="Anniversaire">Anniversaire</option>
-              <option value="Établissement / Rooftop">Établissement / Rooftop</option>
-              <option value="Autre">Autre</option>
-            </select>
-          </label>
-          <label>Date de l’événement <span class="req">*</span>
-            <input name="eventDate" id="suggest-event-date" type="date" required>
-          </label>
-        </div>
-
-        <div class="form-row">
-          <label>Prénom <span class="req">*</span>
-            <input name="firstName" id="suggest-first-name" required autocomplete="given-name" placeholder="Votre prénom">
-          </label>
-          <label>Email <span class="req">*</span>
-            <input name="email" id="suggest-email" type="email" required autocomplete="email" placeholder="adresse@exemple.com">
-          </label>
-        </div>
-
-        <div class="form-row">
-          <label>Téléphone
-            <input name="phone" id="suggest-phone" type="tel" autocomplete="tel" placeholder="06 12 34 56 78 (facultatif)">
-          </label>
-        </div>
-
-        <label>Message
-          <textarea name="message" id="suggest-message" rows="3" placeholder="Précisions sur le moment souhaité, l'ambiance attendue... (facultatif)"></textarea>
-        </label>
-
-        <p class="modal-notice">La demande reste soumise à validation selon le morceau, le délai de préparation et les conditions de la prestation.</p>
 
         <div class="modal-actions">
-          <button type="submit" class="btn btn-gold btn-submit">Demander à Tom <span>→</span></button>
+          <button type="submit" id="suggest-submit-btn" class="btn btn-gold btn-modal-submit" disabled>Envoyer la demande <span>→</span></button>
+          <p class="modal-subtext">Tom étudiera la faisabilité selon le style du morceau et le contexte de la prestation.</p>
         </div>
 
         <p id="suggest-status" class="form-status" role="status" aria-live="polite"></p>

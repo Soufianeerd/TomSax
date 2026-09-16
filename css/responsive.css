@@ -206,11 +206,11 @@
     scroll-margin-top: 68px;
   }
   .modal-card {
-    padding: 36px 26px 30px;
+    padding: 36px 28px 32px;
   }
-  .modal-form .form-row {
+  .modal-form-row {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
   .section-top {
     flex-direction: column;
@@ -288,16 +288,17 @@
     scroll-margin-top: 64px;
   }
   .modal-overlay {
-    padding: 16px;
+    padding: 14px;
   }
   .modal-card {
-    padding: 28px 18px 24px;
+    padding: 30px 20px 24px;
   }
   .modal-close {
-    top: 12px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
   }
   .brand-line {
     font-size: 26px;

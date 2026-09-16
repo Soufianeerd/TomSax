@@ -10,8 +10,12 @@
   const modalClose = document.getElementById('close-suggest-modal');
   const suggestForm = document.getElementById('suggest-form');
   const suggestSongInput = document.getElementById('suggest-song');
+  const suggestArtistInput = document.getElementById('suggest-artist');
+  const suggestLinkInput = document.getElementById('suggest-link');
+  const suggestSubmitBtn = document.getElementById('suggest-submit-btn');
   const suggestStatus = document.getElementById('suggest-status');
   let lastFocusedElement = null;
+  let successCloseTimeout = null;
 
   if (!list || !filters) return;
 
@@ -107,57 +111,82 @@
   // Gestion accessible de la modale "Proposer un morceau"
   // =========================================================================
 
+  const updateSubmitState = () => {
+    if (!suggestSubmitBtn || !suggestSongInput) return;
+    const hasSong = Boolean(suggestSongInput.value.trim());
+    suggestSubmitBtn.disabled = !hasSong;
+  };
+
+  suggestSongInput?.addEventListener('input', () => {
+    updateSubmitState();
+    suggestSongInput.closest('.modal-field')?.classList.remove('has-error');
+  });
+
   const openSuggestModal = (initialQuery, triggerEl) => {
     if (!modal) return;
     lastFocusedElement = triggerEl || document.activeElement;
 
-    if (suggestSongInput && initialQuery) {
-      suggestSongInput.value = initialQuery;
+    if (successCloseTimeout) {
+      clearTimeout(successCloseTimeout);
+      successCloseTimeout = null;
     }
 
-    // Préremplissage depuis le brouillon sessionStorage si disponible
-    try {
-      const raw = sessionStorage.getItem('tomsax_song_request_draft');
-      if (raw) {
-        const draft = JSON.parse(raw);
-        if (draft) {
-          const mapping = {
-            'suggest-artist': 'requestedArtist',
-            'suggest-link': 'requestedSongLink',
-            'suggest-event-type': 'eventType',
-            'suggest-event-date': 'eventDate',
-            'suggest-first-name': 'firstName',
-            'suggest-email': 'email',
-            'suggest-phone': 'phone'
-          };
-          Object.entries(mapping).forEach(([elId, key]) => {
-            const input = document.getElementById(elId);
-            if (input && !input.value && draft[key]) {
-              input.value = draft[key];
-            }
-          });
+    // Réinitialiser le formulaire et retirer la carte de succès si présente
+    const successCard = modal.querySelector('.modal-success-card');
+    if (successCard) successCard.remove();
+    if (suggestForm) {
+      suggestForm.style.display = 'flex';
+      suggestForm.reset();
+      suggestForm.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
+    }
+    if (suggestStatus) {
+      suggestStatus.textContent = '';
+      suggestStatus.className = 'form-status';
+    }
+
+    // Pré-remplissage avec la recherche ou le brouillon
+    if (suggestSongInput) {
+      if (initialQuery) {
+        suggestSongInput.value = initialQuery;
+      } else {
+        try {
+          const raw = sessionStorage.getItem('tomsax_song_request_draft');
+          if (raw) {
+            const draft = JSON.parse(raw);
+            if (draft?.requestedSong) suggestSongInput.value = draft.requestedSong;
+            if (draft?.requestedArtist && suggestArtistInput) suggestArtistInput.value = draft.requestedArtist;
+            if (draft?.requestedSongLink && suggestLinkInput) suggestLinkInput.value = draft.requestedSongLink;
+          }
+        } catch (e) {
+          console.warn('Erreur lecture brouillon modal:', e);
         }
       }
-    } catch(e) {
-      console.warn('Erreur lecture brouillon modal:', e);
     }
+
+    updateSubmitState();
 
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
 
-    // Focus sur le champ le plus pertinent
-    const artistInput = document.getElementById('suggest-artist');
-    if (suggestSongInput && !suggestSongInput.value) {
-      suggestSongInput.focus();
-    } else if (artistInput) {
-      artistInput.focus();
-    } else {
-      modalClose?.focus();
-    }
+    // Autofocus sur "Morceau recherché"
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        if (suggestSongInput) {
+          suggestSongInput.focus();
+          if (suggestSongInput.value) {
+            suggestSongInput.select();
+          }
+        }
+      }, 40);
+    });
   };
 
   const closeSuggestModal = () => {
     if (!modal || modal.hasAttribute('hidden')) return;
+    if (successCloseTimeout) {
+      clearTimeout(successCloseTimeout);
+      successCloseTimeout = null;
+    }
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
     if (suggestStatus) suggestStatus.textContent = '';
@@ -183,7 +212,8 @@
   // Focus trap à l'intérieur de la modale
   modal?.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab') return;
-    const focusable = modal.querySelectorAll('button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const focusable = modal.querySelectorAll('button:not(:disabled), input:not(:disabled), [tabindex]:not([tabindex="-1"])');
+    if (!focusable.length) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
 
@@ -199,25 +229,22 @@
   // Soumission de la demande de morceau
   suggestForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!suggestForm.checkValidity()) {
-      const firstInvalid = suggestForm.querySelector(':invalid');
-      if (firstInvalid) firstInvalid.focus();
-      suggestForm.reportValidity();
+
+    const song = (suggestSongInput?.value || '').trim();
+    if (!song) {
+      suggestSongInput?.closest('.modal-field')?.classList.add('has-error');
+      suggestSongInput?.focus();
       return;
     }
 
-    const fd = Object.fromEntries(new FormData(suggestForm).entries());
+    const artist = (suggestArtistInput?.value || '').trim();
+    const link = (suggestLinkInput?.value || '').trim();
 
     // 1. Sauvegarde du brouillon temporaire en sessionStorage
     const draft = {
-      firstName: fd.firstName || '',
-      email: fd.email || '',
-      phone: fd.phone || '',
-      eventType: fd.eventType || '',
-      eventDate: fd.eventDate || '',
-      requestedSong: fd.requestedSong || '',
-      requestedArtist: fd.requestedArtist || '',
-      requestedSongLink: fd.requestedSongLink || ''
+      requestedSong: song,
+      requestedArtist: artist,
+      requestedSongLink: link
     };
     try {
       sessionStorage.setItem('tomsax_song_request_draft', JSON.stringify(draft));
@@ -225,22 +252,22 @@
       console.warn('Erreur écriture sessionStorage:', err);
     }
 
-    // 2. Création d'un lead compatible dans localStorage (démo Tom Sax)
+    // 2. Création du lead dans localStorage (espace Tom / démo)
     const LEADS_KEY = 'tomsax_leads_v1';
     const lead = {
       id: `lead-song-${Date.now()}`,
       source: 'repertoire',
-      requestedSong: fd.requestedSong || '',
-      requestedArtist: fd.requestedArtist || '',
-      requestedSongLink: fd.requestedSongLink || '',
-      eventType: fd.eventType || '',
-      eventDate: fd.eventDate || '',
-      firstName: fd.firstName || '',
-      lastName: '',
-      email: fd.email || '',
-      phone: fd.phone || '',
-      message: fd.message ? `[Demande morceau] ${fd.message}` : '[Demande morceau]',
-      location: 'À préciser',
+      requestedSong: song,
+      requestedArtist: artist,
+      requestedSongLink: link,
+      eventType: 'Proposition de morceau',
+      eventDate: '—',
+      firstName: 'Proposition',
+      lastName: 'Morceau',
+      email: '—',
+      phone: '—',
+      location: '—',
+      message: artist ? `Morceau : ${song} (Artiste : ${artist})` : `Morceau : ${song}`,
       status: 'Nouveau',
       createdAt: new Date().toISOString(),
       demo: false
@@ -254,23 +281,35 @@
       console.warn('Erreur écriture localStorage lead:', err);
     }
 
-    // 3. Synchronisation immédiate avec le formulaire principal
+    // 3. Synchronisation avec le formulaire de réservation principal
     if (typeof window.tomSaxSyncDraft === 'function') {
       window.tomSaxSyncDraft();
     }
 
-    // 4. Message honnête sur le mode démonstration
-    if (suggestStatus) {
-      suggestStatus.textContent = 'Mode démonstration : la demande a été enregistrée uniquement sur cet appareil afin de présenter le fonctionnement de l’espace Tom. Aucun message n’a été envoyé.';
-      suggestStatus.className = 'form-status form-status-success';
-    }
+    // 4. Affichage du message de confirmation élégant
+    suggestForm.style.display = 'none';
 
-    // Fermeture après quelques secondes
-    setTimeout(() => {
+    const card = modal.querySelector('.modal-card');
+    const successCard = document.createElement('div');
+    successCard.className = 'modal-success-card';
+    successCard.innerHTML = `
+      <div class="modal-success-icon" aria-hidden="true">✓</div>
+      <p class="modal-success-title">Demande transmise</p>
+      <p class="modal-success-text">Votre demande a bien été envoyée à Tom.</p>
+      <p class="modal-success-sub">Tom étudiera la faisabilité selon le style du morceau et le contexte de la prestation.</p>
+      <button type="button" class="btn btn-outline-gold btn-modal-close-confirm" id="btn-close-modal-confirm">Fermer</button>
+    `;
+    card.appendChild(successCard);
+
+    document.getElementById('btn-close-modal-confirm')?.addEventListener('click', closeSuggestModal);
+
+    // Fermeture automatique fluide après 3.2 secondes
+    successCloseTimeout = setTimeout(() => {
       closeSuggestModal();
-      suggestForm.reset();
-    }, 2800);
+    }, 3200);
   });
+
+  window.openSuggestModal = openSuggestModal;
 
   render();
 })();
